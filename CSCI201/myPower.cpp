@@ -6,7 +6,7 @@ double myPower(double base, int exponent);
 
 int main() {
     // Hard-coded values for testing
-    double b = 5.0;
+    double b = 2.0;
     int e = 3;
 
     // 2. Function Call

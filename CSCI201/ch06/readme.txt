@@ -1,1 +1,0 @@
-// This folder contains C++ programs for the <CSCI 201 AVA Computer Science II> course

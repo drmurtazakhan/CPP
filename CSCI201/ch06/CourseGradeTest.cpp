@@ -7,7 +7,7 @@ char courseGrade(int score);
 int main() {
     int studentScore;
     
-    cout << "Enter the student's score (0-100): ";
+    cout << "Enter.... the student's score (0-100): ";
     cin >> studentScore;
 
     // Call the function and store the result

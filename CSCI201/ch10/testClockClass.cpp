@@ -41,7 +41,7 @@ int main()
              << endl;                                  //Line 15
 
     cout << "Line 16: Enter the hours, minutes, and "
-         << "seconds: ";                               //Line 16
+         << "seconds e.g., 7 35 45: ";                               //Line 16
     cin >> hours >> minutes >> seconds;                //Line 17
     cout << endl;                                      //Line 18
 

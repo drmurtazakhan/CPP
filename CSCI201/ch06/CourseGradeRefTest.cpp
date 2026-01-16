@@ -26,7 +26,8 @@ int main()
 void getScore(int& score)
 {
     cout << "Enter course score: ";    
-    cin >> score;                              
+    cin >> score;  
+           score = score+10;                     
     cout << endl << "Course score is "
          << score << endl;                     
 }

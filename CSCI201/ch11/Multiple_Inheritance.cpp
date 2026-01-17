@@ -1,52 +1,53 @@
 #include <iostream>
- 
 using namespace std;
 
-// Base class Shape
+// Base class 1: Shape (No parameters)
 class Shape {
-   public:
-      void setWidth(int w) {
-         width = w;
-      }
-      void setHeight(int h) {
-         height = h;
-      }
-      
-   protected:
-      int width;
-      int height;
+public:
+    Shape() {
+        cout << "Shape base initialized." << endl;
+    }
 };
 
-// Base class PaintCost
+// Base class 2: PaintCost
 class PaintCost {
-   public:
-      int getCost(int area) {
-         return area * 70;
-      }
+public:
+    // No constructor needed here, just a utility method
+    int getCost(int area) {
+        return area * 70;
+    }
 };
 
-// Derived class
-class Rectangle: public Shape, public PaintCost {
-   public:
-      int getArea() {
-         return (width * height); 
-      }
+// Derived class using Multiple Inheritance
+// It inherits from BOTH Shape and PaintCost
+class Rectangle : public Shape, public PaintCost {
+protected:
+    int width, height;
+
+public:
+    // Rectangle Constructor: Initializes width and height
+    // It also calls the Shape constructor automatically
+    Rectangle(int w, int h) : Shape() {
+        width = w;
+        height = h;
+        cout << "Rectangle initialized with dimensions." << endl;
+    }
+
+    int getArea() {
+        return width * height;
+    }
 };
 
-int main(void) {
-   Rectangle Rect;
-   int area;
- 
-   Rect.setWidth(5);
-   Rect.setHeight(7);
+int main() {
+    // We create the object in one line using the constructor
+    Rectangle rect(5, 7);
 
-   area = Rect.getArea();
-   
-   // Print the area of the object.
-   cout << "Total area: " << Rect.getArea() << endl;
+    int area = rect.getArea();
 
-   // Print the total cost of painting
-   cout << "Total paint cost: $" << Rect.getCost(area) << endl;
+    cout << "Total area: " << area << endl;
 
-   return 0;
+    // We use the method inherited from PaintCost
+    cout << "Total paint cost: $" << rect.getCost(area) << endl;
+
+    return 0;
 }

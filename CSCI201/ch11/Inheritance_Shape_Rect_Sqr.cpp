@@ -25,12 +25,22 @@ public:
     }
 };
 
+class Square : public Rectangle {
+public:
+    // Square Constructor: Takes ONE parameter
+    // It passes that 's' twice to the Rectangle constructor
+    Square(int s) : Rectangle(s, s) {
+        cout << "Square initialized." << endl;
+    }
+};
 
 int main() {
     // Everything happens in one line!
     Rectangle myRect(5, 10);
+    Square mySquare(6);
 
-    cout << "Rectangle Area: " << myRect.getArea() << endl;    
+    cout << "Rectangle Area: " << myRect.getArea() << endl;
+    cout << "Square Area: " << mySquare.getArea() << endl;
 
     return 0;
 }

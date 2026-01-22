@@ -102,5 +102,5 @@ clockType::clockType()  //default constructor
 {
     hr = 0;
     min = 0;
-    sec = 0;
+    sec = 10;
 }

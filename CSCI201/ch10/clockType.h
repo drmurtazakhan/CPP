@@ -62,7 +62,7 @@ public:
       //Postcondition: hr = 0; min = 0; sec = 0;
 
 private:
-    int hr;  //variable to store the hours
+    int hr=6;  //variable to store the hours
     int min; //variable to store the minutes
     int sec; //variable to store the seconds
 };

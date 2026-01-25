@@ -41,6 +41,9 @@ int main() {
     // Now passing the sliced copy to the same function
     printArea(genericShape); 
 
+    cout << "\nAddress of myRect:       " << &myRect << endl;
+    cout << "Address of genericShape: " << &genericShape << endl;
+
     cout << "\nSize of myRect: " << sizeof(myRect) << " bytes" << endl;
     cout << "Size of genericShape: " << sizeof(genericShape) << " bytes" << endl;
 

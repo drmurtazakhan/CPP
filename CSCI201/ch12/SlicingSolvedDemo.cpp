@@ -6,6 +6,11 @@ public:
     virtual int getArea() {
         return 0; 
     }
+
+    // Virtual destructor - ALWAYS in the Base class
+    virtual ~Shape() {
+        cout << "Shape Destructor Executing..." << endl;
+    }
 };
 
 class Rectangle : public Shape {
@@ -13,6 +18,11 @@ private:
     int width, height;
 public:
     Rectangle(int w, int h) : width(w), height(h) {}
+
+    // Destructor - Automatically becomes virtual because the parent's is virtual
+    ~Rectangle() {
+        cout << "Rectangle Destructor Executing..." << endl;
+    }
 
     int getArea() override {
         return width * height;
@@ -41,6 +51,10 @@ int main() {
     Rectangle* ptr2 = &myRect;
     cout << "\n--- Pointer 2 (Derived Type Pointer) ---" << endl;
     printArea(ptr2); // C++ allows passing Rectangle* where Shape* is expected.
+
+    //4. Print addresses to show both pointers point to the same object
+    cout << "\nAddress in ptr1:          " << ptr1 << endl;
+    cout << "Address in ptr2:          " << ptr2 << endl;
 
     return 0;
 }

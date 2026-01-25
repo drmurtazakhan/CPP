@@ -19,7 +19,7 @@ private:
     Color wallColor; 
 
 public:
-    // We add 'w' for width to the parameter list
+    
     Wall(int h, int w, string c) : height(h), width(w), wallColor(c) {
         // The initializer list above handles everything!
     }
@@ -33,9 +33,11 @@ public:
 
 int main() {
     // Now we pass three arguments: height, width, and color
+    {
     Wall gardenWall(10, 25, "Seashell White");
 
     gardenWall.displayDetails();
+    }
 
     return 0;
 }

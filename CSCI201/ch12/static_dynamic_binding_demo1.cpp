@@ -3,7 +3,12 @@ using namespace std;
 
 class Shape {
 public:
-    // Virtual function for Dynamic Binding
+    // STATIC BINDING: No 'virtual' keyword.
+    void printInfo() {
+        cout << "Shape Info: Generic Shape" << endl;
+    }
+
+    // DYNAMIC BINDING: 'virtual' keyword.
     virtual int getArea() {
         return 0;
     }
@@ -14,28 +19,36 @@ private:
     int width, height;
 
 public:
-    // Constructor to set unique dimensions
     Rectangle(int w, int h) {
         width = w;
         height = h;
     }
 
-    // Overriding the area formula
+    // Hiding the parent's info (Static)
+    void printInfo() {
+        cout << "Shape Info: Rectangle (" << width << "x" << height << ")" << endl;
+    }
+
+    // Overriding the parent's area (Dynamic)
     int getArea() override {
         return width * height;
     }
 };
 
 int main() {
-    // We create a Rectangle with specific dimensions
+    // 1. Create a Rectangle object
     Rectangle myRect(10, 5); 
 
-    // Base pointer pointing to the Derived object
+    // 2. Create a Base Pointer pointing to our Rectangle
     Shape* ptr = &myRect;
 
-    // DYNAMIC BINDING: 
-    // Even though ptr is a "Shape*", it calls Rectangle's getArea()
-    cout << "Area via Pointer: " << ptr->getArea() << endl;
+    cout << "--- STATIC BINDING TEST ---" << endl;
+    // Uses the Pointer Type (Shape). It ignores the Rectangle logic.
+    ptr->printInfo(); 
+
+    cout << "\n--- DYNAMIC BINDING TEST ---" << endl;
+    // Uses the Actual Object (Rectangle) because of 'virtual'.
+    cout << "Area calculated: " << ptr->getArea() << endl;
 
     return 0;
 }

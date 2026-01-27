@@ -27,7 +27,10 @@ TriggerDemo createObject(int v) {
 int main() {
     cout << "--- Slide 2: Situation 1 (Initialization) ---" << endl;
     TriggerDemo objectOne(10);
-    TriggerDemo objectTwo = objectOne; // Trigger 1
+    cout << "objectOne created"  << endl;
+
+    TriggerDemo objectTwo = objectOne; // Trigger 1 [Copy Constructor Executed]
+    
     cout << "The value in objectOne is: " << objectOne.val << endl;
     cout << "The value in objectTwo is: " << objectTwo.val << endl;
 

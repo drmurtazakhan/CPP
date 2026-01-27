@@ -30,11 +30,11 @@ void printArea(Shape &s) {
 int main() {
     Rectangle myRect(10, 5); // Width 10, Height 5
 
-    // Concept 1: Passing the original object
+    // Concept 1: Passing Derived to Base Parameter
     cout << "--- Concept 1: Passing Derived to Base Parameter ---" << endl;
     printArea(myRect); 
 
-    // Concept 2: Creating a copy in a base object
+    // Concept 2: Copying Derived into Base Object
     cout << "\n--- Concept 2: Copying Derived into Base Object ---" << endl;
     Shape genericShape = myRect; // Slicing happens here!
     

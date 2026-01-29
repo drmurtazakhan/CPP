@@ -5,7 +5,7 @@ https://github.com/codespaces
 
 cd CSCI201/ch12
 
-Example code ptr_shallowcopy.cpp
+Example code ReferenceAliasDemo.cpp
 Example code ptr_deepcopy.cpp
 
 

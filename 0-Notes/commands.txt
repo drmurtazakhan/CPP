@@ -1,0 +1,51 @@
+https://github.com/
+drmurtazakhan	GG64c
+
+https://github.com/codespaces
+
+cd CSCI201/ch12
+
+Example code ptr_shallowcopy.cpp
+Example code ptr_deepcopy.cpp
+
+
+Compile on github
+g++ myPower.cpp -o myPower
+
+Run on github
+./myPower
+
+
+Commit all changes
+git add . && git commit -m "Your message" && git push
+
+Create a new file
+touch readme.txt
+
+Create the New folder 
+mkdir ch01
+
+Since you have multiple .cpp files (clockTypeImp.cpp testClockClass.cpp), you cannot just compile the test file alone. You must compile all implementation files together.
+
+g++ -o testClockClass clockTypeImp.cpp testClockClass.cpp
+-----------------------
+How to Fix the "Identity Unknown" Error
+
+git config --global user.email "drkhanmurtaza@gmail.com"
+git config --global user.name "drmurtazakhan"
+-----------------------
+To save .cpp files from local PC to github
+Add, Commit, and Push. Type following commands one by one
+git add .
+git commit -m "Updated all files"
+git push origin main
+
+OR type a single commanmd to do all tasks at once
+git add . && git commit -m "Bulk update all files" && git push origin main
+-----------------------
+shortcuts
+autoformat: Shift + Alt + F
+
+
+My CPP repe
+https://github.com/drmurtazakhan/CPP.git

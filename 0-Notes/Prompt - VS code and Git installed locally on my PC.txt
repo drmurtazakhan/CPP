@@ -1,0 +1,17 @@
+I have VS code and Git installed locally on my PC
+
+Previously I was working on github codespaces to write my C++ (CPP) code but is quota expired. So Now I want to move my repo to locally
+
+Following is the path of my repo in github
+https://github.com/drmurtazakhan/CPP/tree/main/CSCI201
+
+In the folder CSCI201, I have separate folders of each chapter, each chapter have C++ code, e.g., C++ files of chapter 12 are in this path
+https://github.com/drmurtazakhan/CPP/tree/main/CSCI201/ch12
+
+======================
+I installed VS Code
+Now shall I launch VS Code and run the following command on Terminal of VS Code?
+git clone https://github.com/drmurtazakhan/CPP.git
+
+
+The command will download the entire repository into a folder named CPP to which local directory of my PC? Can I choose different directory or move downloaded file to new directory

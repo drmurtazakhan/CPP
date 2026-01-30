@@ -50,3 +50,22 @@ autoformat: Shift + Alt + F
 
 My CPP repe
 https://github.com/drmurtazakhan/CPP.git
+
+----------------------
+Exclude Files in VS Code 
+Press Ctrl + , (comma) to open your Settings.
+
+In the search bar at the top, type "exclude".
+
+Look for the section called Files: Exclude.
+
+Click Add Pattern.
+
+To hide everything that is not a .cpp file, you would usually have to list the things you don't want to see. Add these patterns one by one:
+
+**/*.exe (Hides all Windows programs)
+----------------------
+
+**/*.o (Hides all object files)
+
+**/*.out (Hides Mac/Linux programs)

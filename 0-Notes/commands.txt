@@ -5,7 +5,7 @@ https://github.com/codespaces
 
 cd CSCI201/ch12
 
-Example code ReferenceAliasDemo.cpp
+Example code PrivateAddressLeakDemo.cpp
 Example code ptr_deepcopy.cpp
 
 
@@ -16,8 +16,13 @@ Run on github
 ./myPower
 
 
+Since you have multiple .cpp files (clockTypeImp.cpp testClockClass.cpp), you cannot just compile the test file alone. You must compile all implementation files together.
+
+g++ -o testClockClass clockTypeImp.cpp testClockClass.cpp
+-----------------------
 Commit all changes
 git add . && git commit -m "Your message" && git push
+
 
 Create a new file
 touch readme.txt
@@ -25,10 +30,6 @@ touch readme.txt
 Create the New folder 
 mkdir ch01
 
-Since you have multiple .cpp files (clockTypeImp.cpp testClockClass.cpp), you cannot just compile the test file alone. You must compile all implementation files together.
-
-g++ -o testClockClass clockTypeImp.cpp testClockClass.cpp
------------------------
 How to Fix the "Identity Unknown" Error
 
 git config --global user.email "drkhanmurtaza@gmail.com"

@@ -10,10 +10,10 @@ public:
     Rectangle(int w = 0, int h = 0) : width(w), height(h) {}
 
     // Overloading the + operator as a member function
-    // This is a value-returning function that returns a NEW object [cite: 739]
+    // This is a value-returning function that returns a NEW object 
     Rectangle operator+(const Rectangle& otherRect) const {
         Rectangle temp;
-        // Accessing the private members of both rectangles [cite: 872]
+        // Accessing the private members of both rectangles 
         temp.width = this->width + otherRect.width;
         temp.height = this->height + otherRect.height;
         return temp;
@@ -28,7 +28,7 @@ int main() {
     Rectangle rect1(12, 8);
     Rectangle rect2(5, 4);
     
-    // The + operator now uses our custom logic [cite: 714]
+    // The + operator now uses our custom logic 
     Rectangle rect3 = rect1 + rect2; 
 
     cout << "Resulting Rectangle: ";

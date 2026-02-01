@@ -19,12 +19,9 @@ private:
 };
 
 // The friend function definition
-// Note: I added '&' (pass by reference) so the changes stay permanent!
 void two(classIllusFriend &cObj) {
     cObj.x = cObj.x * 2; // Changing x
-    cObj.y = cObj.y * 2; // Changing y
-    
-    cout << "...Friend function 'two' has modified the data..." << endl;
+    cObj.y = cObj.y * 2; // Changing y      
 }
 
 int main() {
@@ -33,7 +30,7 @@ int main() {
 
     // 2. Print initial values
     cout << "Before calling two:" << endl;
-    myObject.print();
+    myObject.print();    
 
     // 3. Call the friend function
     two(myObject);
@@ -42,5 +39,6 @@ int main() {
     cout << "After calling two:" << endl;
     myObject.print();
 
+    cout << endl;
     return 0;
 }

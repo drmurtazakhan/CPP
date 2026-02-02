@@ -1,10 +1,10 @@
-// File name: rectangle_width_height.cpp
+// File name: rectangle_plus.cpp
 #include <iostream>
 using namespace std;
 
 class Rectangle {
 private:
-    int width, height; // Using width and height as requested
+    int width, height; 
 public:
     // Constructor with default parameters
     Rectangle(int w = 0, int h = 0) : width(w), height(h) {}

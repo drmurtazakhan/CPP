@@ -43,6 +43,12 @@ git push origin main
 
 OR type a single commanmd to do all tasks at once
 git add . && git commit -m "Bulk update all files" && git push origin main
+
+To force Pull (get) from github to local CPP
+
+git pull origin main
+git fetch origin
+git reset --hard origin/main
 -----------------------
 shortcuts
 autoformat: Shift + Alt + F

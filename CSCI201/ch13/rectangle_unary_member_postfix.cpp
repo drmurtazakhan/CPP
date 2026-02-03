@@ -31,12 +31,12 @@ rectangleType rectangleType::operator++(int) {
 
 // 1. Added (int) dummy parameter
 rectangleType rectangleType::operator--(int) {
-    rectangleType temp = *this; // 2. Save the OLD state
+    rectangleType temp = *this; // Save the OLD state
 
     length--; 
     width--;  
     
-    return temp; // 3. Return the OLD state
+    return temp; // Return the OLD state
 }
 
 int main() {

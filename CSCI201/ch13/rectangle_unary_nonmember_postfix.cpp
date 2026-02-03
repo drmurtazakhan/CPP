@@ -21,12 +21,12 @@ public:
 
 // 2. Implementation: rect is the object, the 'int' is the dummy tag
 rectangleType operator++(rectangleType& rect, int) {
-    rectangleType temp = rect; // 3. Save the OLD state of the parameter
+    rectangleType temp = rect; // Save the OLD state
 
     rect.length++; 
     rect.width++;  
     
-    return temp; // 4. Return the OLD state
+    return temp; // Return the OLD state
 }
 
 rectangleType operator--(rectangleType& rect, int) {

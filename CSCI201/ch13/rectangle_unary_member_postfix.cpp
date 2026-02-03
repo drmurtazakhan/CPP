@@ -52,8 +52,5 @@ int main() {
     cout << "rect1 (changed): "; rect1.print(); cout << endl; // Shows [11 x 6]
     cout << "rect2 (got old): "; rect2.print(); cout << endl; // Shows [10 x 5]
 
-    rect1--; // Using Post-decrement
-    cout << "After rect1--:   "; rect1.print(); cout << endl;
-
-    return 0;
+     return 0;
 }

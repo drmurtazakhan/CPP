@@ -17,8 +17,8 @@ public:
 
         // 'length' refers to the object on the LEFT (myRectangle)
         // 'yourRectangle.length' refers to the object on the RIGHT
-        temp.length = length + yourRectangle.length;
-        temp.width = width + yourRectangle.width;
+        temp.length = this->length + yourRectangle.length;
+        temp.width = this->width + yourRectangle.width;
 
         return temp;
     }

@@ -22,9 +22,8 @@ public:
 // Implementation using the Scope Resolution Operator ::
 rectangleType rectangleType::operator++() {
     length++; // Increment length
-    width++;  // Increment width
-    
-    return *this; // Return the object that was just changed
+    width++;  // Increment width    
+    return *this; // Return the caller object
 }
 
 rectangleType rectangleType::operator--() {

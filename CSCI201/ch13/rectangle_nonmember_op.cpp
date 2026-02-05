@@ -33,7 +33,7 @@ bool operator==(const rectangleType& first, const rectangleType& second) {
 }
 
 int main() {
-rectangleType myRectangle(12.0, 8.0);
+    rectangleType myRectangle(12.0, 8.0);
     rectangleType yourRectangle(5.0, 4.0);
 
     // Print the inputs

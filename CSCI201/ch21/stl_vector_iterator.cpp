@@ -4,21 +4,21 @@
 using namespace std;
 
 int main() {
-    // 1. Create a vector of integers [cite: 742]
+    // 1. Create a vector of integers 
     vector<int> myNumbers;
 
-    // 2. Add elements to the back [cite: 822]
+    // 2. Add elements to the back 
     myNumbers.push_back(10);
     myNumbers.push_back(20);
     myNumbers.push_back(30);
 
-    // 3. Declare an iterator [cite: 839]
+    // 3. Declare an iterator 
     vector<int>::iterator it;
 
-    // 4. Use a loop with the iterator to print numbers [cite: 870, 871]
+    // 4. Use a loop with the iterator to print numbers 
     cout << "My Numbers: ";
     for (it = myNumbers.begin(); it != myNumbers.end(); ++it) {
-        cout << *it << " "; // *it "dereferences" to get the value [cite: 851]
+        cout << *it << " "; // *it "dereferences" to get the value 
     }
 
     return 0;

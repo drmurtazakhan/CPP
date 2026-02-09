@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    // 1. Constructors: Initializes containers to an empty state [cite: 919]
+    // 1. Constructors: Initializes containers to an empty state 
     vector<int> list1;
     vector<int> list2 = {1, 2, 3}; // Initialized with data
 

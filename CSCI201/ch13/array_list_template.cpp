@@ -45,6 +45,7 @@ public:
 int main() {
     // 1. A list of Integers
     arrayListType<int> intList(5);
+    
     intList.insert(10);
     intList.insert(20);
     intList.insert(30);

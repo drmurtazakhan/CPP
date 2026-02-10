@@ -20,7 +20,6 @@ int main() {
     }
     cout << "\n" << endl;
 
-
     // --- 2. VECTOR EXAMPLE ---
     vector<int> scores = {90, 85, 77, 92};
 

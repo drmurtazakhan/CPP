@@ -11,6 +11,7 @@ int main() {
     // 2. Add elements to BOTH ends
     myDeque.push_back(40);  // Adds 40 to the end
     myDeque.push_front(5);  // Adds 5 to the start
+    //After Pushes: 5 10 20 30 40
 
     cout << "--- After Pushes (Initial State) ---" << endl;
     for (int n : myDeque) {

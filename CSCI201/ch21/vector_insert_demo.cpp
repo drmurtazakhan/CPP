@@ -40,6 +40,7 @@ int main() {
     // 7. Perform the insertion.
     // This says: "At the spot where 'it' is pointing, put the number 85."
     // The vector automatically pushes 80, 90, and 100 one spot to the right.
+    // After this operation, the list will look like: 70, 85, 80, 90, 100
     scoreList.insert(it, 85);
 
     // 8. Print the list again to see the result.

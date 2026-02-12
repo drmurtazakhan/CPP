@@ -45,7 +45,7 @@ int main() {
     auto it = productMap.find(searchCode);
     if (it != productMap.end()) {
         // it->first is the pcode, it->second is the description
-        cout << "Result: " << it->second << " found in aisle 4." << endl;
+        cout << "Success! The product is: " << it->second << endl;
     } else {
         cout << "Error: Product code not found in system." << endl;
     }

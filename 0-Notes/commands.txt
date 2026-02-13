@@ -6,7 +6,7 @@ https://github.com/codespaces
 cd CSCI201/ch21
 
 Example code PrivateAddressLeakDemo.cpp
-Example code ptr_deepcopy.cpp
+Example code stl_vector_iterator.cpp
 
 
 Compile on github
@@ -75,3 +75,6 @@ To hide everything that is not a .cpp file, you would usually have to list the t
 **/*.o (Hides all object files)
 
 **/*.out (Hides Mac/Linux programs)
+
+Focus Terminal	Ctrl + ` (Backtick)
+Focus Editor	Ctrl + 1 (or 2, 3 etc.)

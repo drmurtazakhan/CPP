@@ -1,13 +1,6 @@
-https://github.com/
-drmurtazakhan	GG64c
-
-https://github.com/codespaces
-
-cd CSCI201/ch21
+cd CSCI201/ch14
 
 Example code PrivateAddressLeakDemo.cpp
-Example code stl_vector_iterator.cpp
-
 
 Compile on github
 g++ myPower.cpp -o myPower
@@ -15,14 +8,15 @@ g++ myPower.cpp -o myPower
 Run on github
 ./myPower
 
-
-Since you have multiple .cpp files (clockTypeImp.cpp testClockClass.cpp), you cannot just compile the test file alone. You must compile all implementation files together.
-
-g++ -o testClockClass clockTypeImp.cpp testClockClass.cpp
+Compile multiple files
+g++ -o testClockClass.exe clockTypeImp.cpp testClockClass.cpp
 -----------------------
-Commit all changes
-git add . && git commit -m "Your message" && git push
+To send all your local work to GitHub (Power Shell)
+git add . ; git commit -m "Update my code" ; git push origin main
 
+To send all your local work to GitHub (Bash Shell)
+git add . && git commit -m "Update my code" && git push origin main
+-----------------------
 
 Create a new file
 touch readme.txt
@@ -30,22 +24,14 @@ touch readme.txt
 Create the New folder 
 mkdir ch01
 
-How to Fix the "Identity Unknown" Error
-
-git config --global user.email "drkhanmurtaza@gmail.com"
-git config --global user.name "drmurtazakhan"
 -----------------------
-To save .cpp files from local PC to github
-Add, Commit, and Push. Type following commands one by one
+To save .cpp files from local PC to github 
 git add .
 git commit -m "Updated all files"
 git push origin main
 
-OR type a single commanmd to do all tasks at once
-git add . && git commit -m "Bulk update all files" && git push origin main
 
 To force Pull (get) from github to local CPP
-
 git pull origin main
 git fetch origin
 git reset --hard origin/main
@@ -60,11 +46,8 @@ https://github.com/drmurtazakhan/CPP.git
 ----------------------
 Exclude Files in VS Code 
 Press Ctrl + , (comma) to open your Settings.
-
 In the search bar at the top, type "exclude".
-
 Look for the section called Files: Exclude.
-
 Click Add Pattern.
 
 To hide everything that is not a .cpp file, you would usually have to list the things you don't want to see. Add these patterns one by one:

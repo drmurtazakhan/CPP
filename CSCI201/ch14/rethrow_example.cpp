@@ -30,7 +30,7 @@ int main() {
     }
     catch (string e) {
         // 3. Final handling: Show a user-friendly message
-        cout << "USER NOTIFICATION: We could not process your payment. Please check the amount." << endl;
+        cout << "USER NOTIFICATION: We could not process your payment: " << e << endl;
     }
 
     return 0;

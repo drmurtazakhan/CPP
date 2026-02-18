@@ -9,8 +9,8 @@ int main() {
     // Hard-coded values that will cause an overflow
     // INT_MAX is usually 2,147,483,647
     int current_value = 2147483640; 
-    int added_value = 100; // This will push the sum beyond the maximum value for an int
-    //int added_value = 1; // Ths will not cause an overflow
+    //int added_value = 100; // This will push the sum beyond the maximum value for an int
+    int added_value = 1; // Ths will not cause an overflow
 
     cout << "Starting Value: " << current_value << endl;
     cout << "Attempting to add: " << added_value << endl;

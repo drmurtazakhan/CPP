@@ -4,7 +4,7 @@ int main() {
     // 1. Setup the Window (800x600 pixels)
     sf::RenderWindow window(sf::VideoMode({800, 600}), "C++ Circle Example");
 
-    // 2. Create the Circle (Similar to an Object in Java)
+    // 2. Create the Circle
     float radius = 50.f;
     sf::CircleShape circle(radius);
     

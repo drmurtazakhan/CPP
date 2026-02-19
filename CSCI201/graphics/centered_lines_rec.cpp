@@ -1,15 +1,14 @@
 #include <SFML/Graphics.hpp>
 
 int main() {
-    // 1. Setup: Define window dimensions (Similar to Java PW and PH constants)
+    // 1. Setup: Define window dimensions 
     const int PW = 800;
     const int PH = 800;
     
-    // Create the render window (Equivalent to JFrame)
-    sf::RenderWindow window(sf::VideoMode({PW, PH}), "Graphics Primitives 2D Exercise");
+    // Create the render window 
+    sf::RenderWindow window(sf::VideoMode({PW, PH}), "Graphics Primitives");
 
-    // --- Translation of Java paintComponent Logic ---
-
+    
     // 2. Crosshair Lines: Horizontal and Vertical (Red)
     // We use a VertexArray with 2 points to draw a simple line
     sf::VertexArray line1(sf::PrimitiveType::Lines, 2);
@@ -46,10 +45,10 @@ int main() {
                 window.close();
         }
 
-        // 1. Clear the screen (Equivalent to super.paintComponent(g) and setBackground)
+        // 1. Clear the screen 
         window.clear(sf::Color::White);
 
-        // 2. Draw our primitives (Equivalent to g2.draw calls)
+        // 2. Draw our primitives 
         window.draw(line1);
         window.draw(line2);
         window.draw(rect1); 

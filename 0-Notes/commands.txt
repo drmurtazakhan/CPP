@@ -75,3 +75,6 @@ To hide everything that is not a .cpp file, you would usually have to list the t
 **/*.o (Hides all object files)
 
 **/*.out (Hides Mac/Linux programs)
+
+-------
+g++ centered_lines_rec.cpp -o centered_lines_rec.exe -lsfml-graphics -lsfml-window -lsfml-system

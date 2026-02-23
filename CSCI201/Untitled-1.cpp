@@ -1,9 +1,9 @@
-Step 1: Waiting for the Answer
+// Public_Time_Client.cpp snippet
 
-// UDP_Client.cpp snippet
-char buffer[1024] = {0};
-int addrLen = sizeof(servAddr);
+sockaddr_in servAddr;
+servAddr.sin_family = AF_INET;
+servAddr.sin_port = htons(13); // Port 13 is the "Time" door
 
-// The client now waits to catch the "Upper Case" packet
-recvfrom(sock, buffer, 1024, 0, (struct sockaddr*)&servAddr, &addrLen);
-std::cout << "Server returned: " << buffer << std::endl;
+// Convert the text IP "129.6.15.28" into binary format for the computer
+inet_pton(AF_INET, "129.6.15.28", &servAddr.sin_addr);
+

@@ -1,3 +1,8 @@
+// circle.cpp
+
+// To compile write following command in terminal:
+// g++ circle.cpp -o circle.exe -lsfml-graphics -lsfml-window -lsfml-system
+
 #include <SFML/Graphics.hpp>
 
 int main() {

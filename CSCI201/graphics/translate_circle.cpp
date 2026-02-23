@@ -1,3 +1,9 @@
+// translate_circle.cpp 
+
+// To compile write following command in terminal:
+// g++ translate_circle.cpp -o translate_circle.exe -lsfml-graphics -lsfml-window -lsfml-system
+
+
 #include <SFML/Graphics.hpp>
 
 int main() {

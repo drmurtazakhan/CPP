@@ -1,4 +1,11 @@
 // state_server_win.cpp
+
+// Compile on Bash
+// g++ state_server_win.cpp -o state_server_win.exe -lws2_32
+
+// First start the server first by typing: ./state_server_win.exe
+// Then, in another terminal, run the client by typing: ./state_client_win.exe
+
 #include <iostream>
 #include <map>
 #include <string>

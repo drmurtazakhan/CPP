@@ -1,3 +1,9 @@
+// rotating_rect.cpp
+
+// To compile write following command in terminal:
+// g++ rotating_rect.cpp -o rotating_rect.exe -lsfml-graphics -lsfml-window -lsfml-system
+
+
 #include <SFML/Graphics.hpp>
 
 int main() {

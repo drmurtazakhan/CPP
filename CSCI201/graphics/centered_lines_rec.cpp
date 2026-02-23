@@ -1,3 +1,9 @@
+// centered_lines_rec.cpp
+
+// To compile write following command in terminal:
+// g++ centered_lines_rec.cpp -o centered_lines_rec.exe -lsfml-graphics -lsfml-window -lsfml-system
+
+
 #include <SFML/Graphics.hpp>
 
 int main() {

@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 
+
 int main() {
     sf::RenderWindow window(sf::VideoMode({400, 400}), "Dual Button Timer");
     window.setFramerateLimit(60);

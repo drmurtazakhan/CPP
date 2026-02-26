@@ -2,7 +2,7 @@
 
 // To compile write following command in terminal:
 // g++ translate_circle.cpp -o translate_circle.exe -lsfml-graphics -lsfml-window -lsfml-system
-
+// to run: ./translate_circle.exe
 
 #include <SFML/Graphics.hpp>
 
@@ -10,7 +10,7 @@ int main() {
     sf::RenderWindow window(sf::VideoMode({800, 800}), "Controlled Translation");
 
     // This line is the "Speed Limit"
-    window.setFramerateLimit(60); // 60 frames per second (FPS)
+    window.setFramerateLimit(30); // 60 frames per second (FPS)
 
     sf::CircleShape circle(40.f);
     circle.setFillColor(sf::Color::Yellow);

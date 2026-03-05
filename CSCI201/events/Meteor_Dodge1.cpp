@@ -8,7 +8,7 @@ int main() {
     // --- CONSTANTS / SETTINGS ---
     const float WINDOW_WIDTH = 800.f;
     const float WINDOW_HEIGHT = 600.f;    
-    
+
     float shipSpeed = 6.0f;
     float meteorSpeed = 2.0f;
     float bulletSpeed = 10.0f;

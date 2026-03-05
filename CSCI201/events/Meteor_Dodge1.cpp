@@ -1,97 +1,121 @@
-// Meteor_Dodge1.cpp
-// compile with: g++ Meteor_Dodge1.cpp -o Meteor_Dodge1 -lsfml-graphics -lsfml-window -lsfml-system
-// run with: ./Meteor_Dodge1
-
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <ctime>
 #include <iostream>
-#include <string> // Added for to_string
+#include <string>
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "Meteor Dodge");
+    // --- CONSTANTS / SETTINGS ---
+    const float WINDOW_WIDTH = 800.f;
+    const float WINDOW_HEIGHT = 600.f;    
+    
+    float shipSpeed = 6.0f;
+    float meteorSpeed = 2.0f;
+    float bulletSpeed = 10.0f;
+    float spawnRate = 45.0f;  // Lower is faster spawning
+    float fireRate = 15.0f;   // Lower is faster shooting
+
+    // Window setup
+    sf::RenderWindow window(sf::VideoMode({(unsigned int)WINDOW_WIDTH, (unsigned int)WINDOW_HEIGHT}), "Meteor Dodge");
     window.setFramerateLimit(60);
     srand(static_cast<unsigned>(time(NULL)));
 
-    // 1. Load Ship
-    sf::Texture shipTexture;
-    if (!shipTexture.loadFromFile("playerShip1_blue.png")) return -1; 
-    sf::Sprite ship(shipTexture);
-    ship.setPosition({400, 500});
-
-    // 2. Load Meteor
-    sf::Texture meteorTexture;
+    // 1. Load Textures
+    sf::Texture shipTexture, meteorTexture, bulletTexture;
+    if (!shipTexture.loadFromFile("playerShip1_blue.png")) return -1;
     if (!meteorTexture.loadFromFile("meteorBrown_small1.png")) return -1;
+    if (!bulletTexture.loadFromFile("laserBlue06.png")) return -1;
 
-    // Score and Font Setup ---
+    // 2. Setup Sprites & UI
+    sf::Sprite ship(shipTexture);
+    ship.setPosition({400.f, 500.f});
+
     int score = 0;
     sf::Font font;
-    if (!font.openFromFile("arial.ttf")) { // Ensure arial.ttf is in your folder
-        std::cout << "Error: font not found!" << std::endl;
-        return -1;
-    }
+    if (!font.openFromFile("arial.ttf")) return -1;
     sf::Text scoreText(font);
     scoreText.setCharacterSize(24);
     scoreText.setFillColor(sf::Color::White);
-    scoreText.setPosition({650.f, 10.f}); // Top right
-    // ---------------------------------
+    scoreText.setPosition({650.f, 10.f});
 
+    // 3. Vectors and Timers
     std::vector<sf::Sprite> meteors;
+    std::vector<sf::Sprite> bullets;
     float spawnTimer = 0;
-    float shipSpeed = 6.0f;
-    float meteorSpeed = 3.5f;
+    float bulletTimer = 0;
 
     while (window.isOpen()) {
         while (const auto event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>()) window.close();
         }
 
-        // Movement
+        // --- INPUT & MOVEMENT ---
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) && ship.getPosition().x > 0)
             ship.move({-shipSpeed, 0.f});
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && ship.getPosition().x < 700)
             ship.move({shipSpeed, 0.f});
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) && ship.getPosition().y > 0)
-            ship.move({0.f, -shipSpeed});
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) && ship.getPosition().y < 520)
-            ship.move({0.f, shipSpeed});
 
-        // Spawning
+        // Shooting Logic
+        bulletTimer += 1.0f;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) && bulletTimer >= fireRate) {
+            sf::Sprite bullet(bulletTexture);
+            bullet.setPosition({ship.getPosition().x + 45.f, ship.getPosition().y});
+            bullets.push_back(bullet);
+            bulletTimer = 0;
+        }
+
+        // --- UPDATES ---
         spawnTimer += 1.0f;
-        if (spawnTimer >= 45.0f) {
+        if (spawnTimer >= spawnRate) {
             sf::Sprite meteor(meteorTexture);
             meteor.setPosition({(float)(rand() % 750), -50.f});
             meteors.push_back(meteor);
             spawnTimer = 0;
         }
 
-        // Update Meteors
+        // Update Bullets
+        for (size_t i = 0; i < bullets.size(); ) {
+            bullets[i].move({0.f, -bulletSpeed});
+            if (bullets[i].getPosition().y < -20.f) bullets.erase(bullets.begin() + i);
+            else i++;
+        }
+
+        // Update Meteors & Collisions
+        // Outer Loop: Look at each meteor
         for (size_t i = 0; i < meteors.size(); ) {
             meteors[i].move({0.f, meteorSpeed});
 
-            if (meteors[i].getGlobalBounds().findIntersection(ship.getGlobalBounds())) {
-                std::cout << "Final Score: " << score << std::endl;
-                window.close();
+            bool destroyed = false;
+            // Inner Loop: Look at each bullet for the CURRENT meteor
+            for (size_t j = 0; j < bullets.size(); j++) {
+                if (meteors[i].getGlobalBounds().findIntersection(bullets[j].getGlobalBounds())) {
+                    meteors.erase(meteors.begin() + i); // Remove Meteor
+                    bullets.erase(bullets.begin() + j); // Remove Bullet
+                    score += 10;
+                    destroyed = true;
+                    break; // Stop looking at other bullets for this deleted meteor
+                }
             }
+            if (destroyed) continue;
 
-            if (meteors[i].getPosition().y > 600) {
-                meteors.erase(meteors.begin() + i);                
-                score++;                
-            } else {
-                i++;
-            }
+            // Check Ship vs Meteor
+            if (meteors[i].getGlobalBounds().findIntersection(ship.getGlobalBounds())) window.close();
+
+            // Check Boundary
+            if (meteors[i].getPosition().y > WINDOW_HEIGHT) {
+                meteors.erase(meteors.begin() + i);
+                score += 1; // Small reward for dodging
+            } else i++;
         }
-        
-        scoreText.setString("Score: " + std::to_string(score));
-        // -------------------------------
 
-        // Drawing
+        // --- DRAWING ---
+        scoreText.setString("Score: " + std::to_string(score));
         window.clear();
         window.draw(ship);
-        for (const auto& m : meteors) window.draw(m);
-        window.draw(scoreText); // Draw the score
+        for (auto& b : bullets) window.draw(b);
+        for (auto& m : meteors) window.draw(m);
+        window.draw(scoreText);
         window.display();
     }
-
     return 0;
 }

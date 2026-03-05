@@ -50,8 +50,7 @@ git pull origin main
 git fetch origin
 git reset --hard origin/main
 -----------------------
-shortcuts
-autoformat: Shift + Alt + F
+
 
 
 My CPP repe
@@ -78,3 +77,9 @@ To hide everything that is not a .cpp file, you would usually have to list the t
 
 -------
 g++ centered_lines_rec.cpp -o centered_lines_rec.exe -lsfml-graphics -lsfml-window -lsfml-system
+
+shortcuts
+Terminal: Ctrl +  ` (The backtick key, just below the Esc key).
+Settings: Ctrl + , (comma) to 
+autoformat: Shift + Alt + F
+AI chat : Ctrl + Alt + I

@@ -1,3 +1,5 @@
+// To compile: g++ Meteor_Dodge1.cpp -o Meteor_Dodge1 -lsfml-graphics -lsfml-window -lsfml-system
+// To run: ./Meteor_Dodge1
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <ctime>
@@ -7,10 +9,9 @@
 int main() {
     // --- CONSTANTS / SETTINGS ---
     const float WINDOW_WIDTH = 800.f;
-    const float WINDOW_HEIGHT = 600.f;    
-
+    const float WINDOW_HEIGHT = 600.f;
     float shipSpeed = 6.0f;
-    float meteorSpeed = 2.0f;
+    float meteorSpeed = 3.5f;
     float bulletSpeed = 10.0f;
     float spawnRate = 45.0f;  // Lower is faster spawning
     float fireRate = 15.0f;   // Lower is faster shooting
@@ -54,6 +55,12 @@ int main() {
             ship.move({-shipSpeed, 0.f});
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && ship.getPosition().x < 700)
             ship.move({shipSpeed, 0.f});
+        
+        // Added Up and Down Movement
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) && ship.getPosition().y > 0)
+            ship.move({0.f, -shipSpeed});
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) && ship.getPosition().y < 520)
+            ship.move({0.f, shipSpeed});
 
         // Shooting Logic
         bulletTimer += 1.0f;
@@ -81,19 +88,18 @@ int main() {
         }
 
         // Update Meteors & Collisions
-        // Outer Loop: Look at each meteor
         for (size_t i = 0; i < meteors.size(); ) {
             meteors[i].move({0.f, meteorSpeed});
 
             bool destroyed = false;
-            // Inner Loop: Look at each bullet for the CURRENT meteor
+            // Check Bullet vs Meteor
             for (size_t j = 0; j < bullets.size(); j++) {
                 if (meteors[i].getGlobalBounds().findIntersection(bullets[j].getGlobalBounds())) {
-                    meteors.erase(meteors.begin() + i); // Remove Meteor
-                    bullets.erase(bullets.begin() + j); // Remove Bullet
+                    meteors.erase(meteors.begin() + i);
+                    bullets.erase(bullets.begin() + j);
                     score += 10;
                     destroyed = true;
-                    break; // Stop looking at other bullets for this deleted meteor
+                    break; 
                 }
             }
             if (destroyed) continue;
@@ -104,7 +110,7 @@ int main() {
             // Check Boundary
             if (meteors[i].getPosition().y > WINDOW_HEIGHT) {
                 meteors.erase(meteors.begin() + i);
-                score += 1; // Small reward for dodging
+                score += 1; 
             } else i++;
         }
 

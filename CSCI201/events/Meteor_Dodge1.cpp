@@ -11,10 +11,10 @@ int main() {
     const float WINDOW_WIDTH = 800.f;
     const float WINDOW_HEIGHT = 600.f;
     float shipSpeed = 6.0f;
-    float meteorSpeed = 3.5f;
-    float bulletSpeed = 10.0f;
-    float spawnRate = 45.0f;  // Lower is faster spawning
-    float fireRate = 15.0f;   // Lower is faster shooting
+    float meteorSpeed = 3.0f;
+    float bulletSpeed = 20.0f;
+    float spawnRate = 25.0f;  // Lower is faster spawning
+    float fireRate = 5.0f;   // Lower is faster shooting
 
     // Window setup
     sf::RenderWindow window(sf::VideoMode({(unsigned int)WINDOW_WIDTH, (unsigned int)WINDOW_HEIGHT}), "Meteor Dodge");

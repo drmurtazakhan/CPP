@@ -1,3 +1,6 @@
+// CopyConstructorTriggers.cpp
+// to compile: g++ CopyConstructorTriggers.cpp -o CopyConstructorTriggers.exe
+// to run: ./CopyConstructorTriggers.exe
 #include <iostream>
 using namespace std;
 
@@ -40,6 +43,10 @@ int main() {
     cout << "\n--- Slide 2: Situation 3 (Returning by Value) ---" << endl;
     TriggerDemo objectThree = createObject(99);
     cout << "The value in objectThree is: " << objectThree.val << endl;
+
+    cout << "address objectOne: " << &objectOne << endl; 
+    cout << "address objectTwo: " << &objectTwo << endl; 
+    cout << "address objectThree: " << &objectThree << endl; 
 
     return 0;
 }

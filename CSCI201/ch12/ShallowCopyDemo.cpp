@@ -1,3 +1,6 @@
+// ShallowCopyDemo.cpp
+// to compile: g++ -std=c++17 ShallowCopyDemo.cpp -o ShallowCopyDemo
+// to run: ./ShallowCopyDemo.exe
 #include <iostream>
 using namespace std;
 

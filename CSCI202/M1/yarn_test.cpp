@@ -58,7 +58,7 @@ int main() {
     }
 
     // 4. Get Fiber types
-    // Note: This is a CSV string (e.g., "cotton, bamboo") that the class will parse [cite: 15, 16]
+    // Note: This is a CSV string (e.g., "cotton, bamboo") that the class will parse
     std::cout << "What is the fiber made of? (e.g., cotton, bamboo, acrylic, silk, wool): " << std::endl;
     std::cin >> std::ws;
     std::getline(std::cin, fibType);

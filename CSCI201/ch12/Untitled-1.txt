@@ -1,0 +1,14 @@
+
+
+int totalReceived = 0;
+while (totalReceived < fileSize) {
+    // Calculate how much is left and receive the next chunk
+    int bytes = recv(sock, buffer + totalReceived, (int)fileSize - totalReceived, 0);
+    
+    if (bytes <= 0) break; // Error or connection closed
+    totalReceived += bytes; // Update our progress
+}
+
+// Write the complete buffer to the hard drive
+std::ofstream outFile("received_image.jpg", std::ios::binary);
+outFile.write(buffer, fileSize);

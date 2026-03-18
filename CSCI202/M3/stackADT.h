@@ -1,44 +1,30 @@
-//Header file: stackADT.h 
+// stackADT.h 
 
 #ifndef H_StackADT
 #define H_StackADT 
   
+// The template <class Type> allows this interface to work with any data type.
 template <class Type>
 class stackADT
 {
 public:
+    // Pure virtual function to reset the stack to an empty state.
     virtual void initializeStack() = 0;
-      //Method to initialize the stack to an empty state.
-      //Postcondition: Stack is empty
      
+    // Returns true if no elements are in the stack, false otherwise.
     virtual bool isEmptyStack() const = 0;
-      //Function to determine whether the stack is empty.
-      //Postcondition: Returns true if the stack is empty,
-      //               otherwise returns false.
 
+    // Returns true if the stack has reached its maximum allocated capacity.
     virtual bool isFullStack() const = 0;
-      //Function to determine whether the stack is full.
-      //Postcondition: Returns true if the stack is full,
-      //               otherwise returns false.
 
+    // Adds a new item to the very top of the stack.
     virtual void push(const Type& newItem) = 0;
-      //Function to add newItem to the stack.
-      //Precondition: The stack exists and is not full.
-      //Postcondition: The stack is changed and newItem 
-      //               is added to the top of the stack.
 
+    // Returns the current top element without removing it.
     virtual Type top() const = 0;
-      //Function to return the top element of the stack.
-      //Precondition: The stack exists and is not empty.
-      //Postcondition: If the stack is empty, the program 
-      //               terminates; otherwise, the top element
-      //               of the stack is returned.
 
+    // Removes the top element from the stack.
     virtual void pop() = 0;
-      //Function to remove the top element of the stack.
-      //Precondition: The stack exists and is not empty.
-      //Postcondition: The stack is changed and the top 
-      //               element is removed from the stack.
 };
         
 #endif

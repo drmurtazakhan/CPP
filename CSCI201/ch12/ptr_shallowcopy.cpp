@@ -1,3 +1,6 @@
+// ptr_shallowcopy.cpp
+// to compile: g++ ptr_shallowcopy.cpp -o ptr_shallowcopy.exe
+// to run: ./ptr_shallowcopy.exe
 #include <iostream>
 using namespace std;
 

@@ -1,3 +1,6 @@
+// dynamic_array_demo1.cpp
+// to compile: g++ dynamic_array_demo1.cpp -o dynamic_array_demo1.exe   
+// to run: ./dynamic_array_demo1.exe
 #include <iostream>
 using namespace std;
 

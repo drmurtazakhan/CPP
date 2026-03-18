@@ -1,3 +1,6 @@
+// ptr_deepcopy.cpp
+// to compile: g++ ptr_deepcopy.cpp -o ptr_deepcopy.exe
+// to run: ./ptr_deepcopy.exe
 #include <iostream>
 using namespace std;
 

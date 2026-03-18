@@ -1,3 +1,6 @@
+// static_dynamic_binding_demo1.cpp
+// to compile: g++ static_dynamic_binding_demo1.cpp -o static_dynamic_binding_demo1.exe
+// to run: ./static_dynamic_binding_demo1.exe
 #include <iostream>
 using namespace std;
 

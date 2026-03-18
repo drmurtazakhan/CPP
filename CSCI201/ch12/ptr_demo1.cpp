@@ -1,3 +1,6 @@
+// ptr_demo1.cpp
+// to compile: g++ ptr_demo1.cpp -o ptr_demo1.exe
+// to run: ./ptr_demo1.exe
 #include <iostream>
 using namespace std;
 

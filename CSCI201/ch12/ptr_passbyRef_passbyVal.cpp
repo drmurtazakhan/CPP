@@ -1,3 +1,6 @@
+// ptr_passbyRef_passbyVal.cpp
+// to compile: g++ ptr_passbyRef_passbyVal.cpp -o ptr_passbyRef_passbyVal.exe
+// to run: ./ptr_passbyRef_passbyVal.exe
 #include <iostream>
 using namespace std;
 

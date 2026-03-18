@@ -1,3 +1,6 @@
+// fun_return_ptr.cpp
+// to compile: g++ fun_return_ptr.cpp -o fun_return_ptr.exe 
+// to run: ./fun_return_ptr.exe
 #include <iostream>
 using namespace std;
 

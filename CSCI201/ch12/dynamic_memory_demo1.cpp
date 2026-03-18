@@ -1,3 +1,6 @@
+// dynamic_memory_demo1.cpp
+// to compile: g++ dynamic_memory_demo1.cpp -o dynamic_memory_demo1.exe 
+// to run: ./dynamic_memory_demo1.exe
 #include <iostream>
 using namespace std;
 

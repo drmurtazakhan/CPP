@@ -12,7 +12,7 @@ public:
     // User-defined copy constructor to track when it runs
     TriggerDemo(const TriggerDemo& other) {
         val = other.val;
-        cout << "[Copy Constructor Executed]" << endl;
+        cout << "[Copy Constructor Executed.]" << endl;
     }
 };
 
@@ -43,7 +43,8 @@ int main() {
     cout << "\n--- Slide 2: Situation 3 (Returning by Value) ---" << endl;
     TriggerDemo objectThree = createObject(99);
     cout << "The value in objectThree is: " << objectThree.val << endl;
-
+    
+    cout << endl;
     cout << "address objectOne: " << &objectOne << endl; 
     cout << "address objectTwo: " << &objectTwo << endl; 
     cout << "address objectThree: " << &objectThree << endl; 

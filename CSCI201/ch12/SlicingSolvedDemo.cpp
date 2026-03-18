@@ -1,3 +1,6 @@
+// SlicingSolvedDemo.cpp
+// to compile: g++ SlicingSolvedDemo.cpp -o SlicingSolvedDemo.exe
+// to run: ./SlicingSolvedDemo.exe
 #include <iostream>
 using namespace std;
 

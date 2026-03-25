@@ -4,7 +4,10 @@
 // Program: Postfix Calculator  
 // This program evaluates postfix expressions.
 //***********************************************************
-  
+
+// compile: g++ PostFix.cpp -o PostFix.exe -mconsole
+// run: ./PostFix.exe
+
 #include <iostream>  
 #include <iomanip>
 #include <fstream>

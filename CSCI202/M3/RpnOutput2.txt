@@ -1,0 +1,14 @@
+#35.00 #27.00 + #3.00 * = 186.00
+_________________________________
+#26.00 #28.00 + #32.00 #2.00 ; (Error: Unknown operator) - (Error: Not enough operands) #5.00 / (Error: Not enough operands) (Expression ignored due to error)
+_________________________________
+#23.00 #30.00 #15.00 * / = 0.05
+_________________________________
+#2.00 #3.00 #4.00 + (Error: Too many numbers/operands)
+_________________________________
+#20.00 #29.00 #9.00 * ; (Error: Unknown operator) (Expression ignored due to error)
+_________________________________
+#25.00 #23.00 - + (Error: Not enough operands) (Expression ignored due to error)
+_________________________________
+#34.00 #24.00 #12.00 #7.00 / * + #23.00 - = 52.14
+_________________________________

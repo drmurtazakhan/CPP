@@ -43,7 +43,7 @@ int main()
     }
      
     // Open the output file where results will be saved
-    outfile.open("RpnOutput2.txt");
+    outfile.open("RpnOutput3.txt");
 
     // Format output to show 2 decimal places
     outfile << fixed << showpoint;

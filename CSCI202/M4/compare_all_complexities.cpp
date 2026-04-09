@@ -47,7 +47,7 @@ int main()
     long long expLimit = pow(2, n);
     
     // Safety check: Don't run the actual loop if n is too high
-    if (n <= 28) {
+    if (n <= 60) {
         for (long long i = 0; i < expLimit; i++) {
             exponentialSteps++;
         }

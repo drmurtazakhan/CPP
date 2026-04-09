@@ -7,8 +7,11 @@ using namespace std;
 // ------------------- Recursive Binary Search for int -------------------
 int recBinarySearch(const int list[], int first, int last, int item) {
     // Base case: subarray is empty
-    if (first > last)
+    if (first > last){
+        cout << "Searching: first = " << first <<  ", last = " << last << endl;
         return -1;
+    }
+        
 
     int mid = (first + last) / 2;
 
@@ -31,7 +34,7 @@ int binarySearch(const int list[], int length, int item) {
 int main() {
     int myList[] = {4, 8, 19, 25, 34, 39, 45, 48, 66, 75, 89, 95};
     int n = sizeof(myList) / sizeof(myList[0]);
-    int searchItem = 95;
+    int searchItem = 4;
 
     cout << "List: ";
     for (int i = 0; i < n; i++)

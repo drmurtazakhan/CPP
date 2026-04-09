@@ -1,45 +1,46 @@
-// Example file name: fibonacci_iterative.cpp
-
-/*
-   Commands to compile and run:
-   g++ fibonacci_iterative.cpp -o fibonacci_iterative.exe
-   ./fibonacci_iterative.exe
-*/
-
+// fibonacci_iterative.cpp
+// How to compile: g++ fibonacci_iterative.cpp -o fibonacci_iterative.exe
+// How to run: ./fibonacci_iterative.exe
 #include <iostream>
 
 using namespace std;
 
-// Function to calculate the nth Fibonacci number iteratively
-long long fibonacci(int n) {
-    if (n == 0) return 0;
-    if (n == 1) return 1;
+int iFibNum(int n);
 
-    long long first = 0;   // Represents (n-2)
-    long long second = 1;  // Represents (n-1)
-    long long current = 0;
+int main()
+{
+    int nth;
 
-    // Loop starts from the 2nd index up to n
-    for (int i = 2; i <= n; i++) {
-        current = first + second; 
-        first = second;    // Move second to first for the next step
-        second = current;  // Move current to second for the next step
+    cout << "first five Fibonacci sequence: 0, 1, 1, 2, 3" << endl;
+    cout << "Enter the position of the desired Fibonacci number: ";
+    cin >> nth;
+    cout << endl;
+
+    cout << "The Fibonacci number at position " << nth
+         << " is: " << iFibNum(nth) << endl;
+
+    return 0;
+}
+
+// Iterative version of the Fibonacci function
+int iFibNum(int n)
+{
+    if (n == 1)
+        return 0;
+    if (n == 2)
+        return 1;
+
+    int first = 0;   // Represents (n-2)
+    int second = 1;  // Represents (n-1)
+    int current = 0;
+
+    // Start loop from 3 since we handled positions 1 and 2 above
+    for (int i = 3; i <= n; i++)
+    {
+        current = first + second;
+        first = second;  // Move second to first for next iteration
+        second = current; // Move current to second for next iteration
     }
 
     return current;
-}
-
-int main() {
-    int n;
-
-    cout << "Enter the position (n) for Fibonacci sequence: ";
-    cin >> n;
-
-    if (n < 0) {
-        cout << "Please enter a non-negative integer." << endl;
-    } else {
-        cout << "Fibonacci number at position " << n << " is " << fibonacci(n) << endl;
-    }
-
-    return 0;
 }

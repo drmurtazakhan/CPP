@@ -45,13 +45,13 @@ void recMergeSort(elemType list[], int first, int last)
     {
         int mid = (first + last) / 2;
 
-        cout << "Splitting: first = " << first << ", mid = " << mid << endl;
+        //cout << "Splitting: first = " << first << ", mid = " << mid << endl;
         recMergeSort(list, first, mid);    // Sort left half
         
-        cout << "Splitting: mid + 1 = " << (mid + 1) << ", last = " << last << endl;
+        //cout << "Splitting: mid + 1 = " << (mid + 1) << ", last = " << last << endl;
         recMergeSort(list, mid + 1, last); // Sort right half
         
-        //cout << "Merging: first=" << first << ", mid=" << mid << ", last=" << last << endl;
+        cout << "Merging: first=" << first << ", mid=" << mid << ", last=" << last << endl;
         merge(list, first, mid, last); // Merge halves
     }
 }

@@ -6,52 +6,35 @@
 
 using namespace std;
 
-// We inherit from binaryTreeType so we can manually access the 'protected' root pointer
 template <class elemType>
 class temporaryTree : public binaryTreeType<elemType> {
 public:
-    void buildSimpleTree() {
-        // 1. Create the Root node (Value: 10)
-        this->root = new nodeType<elemType>;
-        this->root->info = 10;
+    // Dummy implementations for abstract functions
+    bool search(const elemType& item) const { return false; }
+    void insert(const elemType& item) { }
+    void deleteNode(const elemType& item) { }
 
-        // 2. Create Left Child (Value: 20)
-        this->root->lLink = new nodeType<elemType>;
-        this->root->lLink->info = 20;
-        this->root->lLink->lLink = nullptr;
-        this->root->lLink->rLink = nullptr;
-
-        // 3. Create Right Child (Value: 30)
-        this->root->rLink = new nodeType<elemType>;
-        this->root->rLink->info = 30;
-        this->root->rLink->lLink = nullptr;
-        this->root->rLink->rLink = nullptr;
-        
-        // Structure created:
-        //      10
-        //     /  \
-        //    20  30
+    void buildManualTree() {
+        this->root = new nodeType<elemType>{10, nullptr, nullptr};
+        this->root->lLink = new nodeType<elemType>{20, nullptr, nullptr};
+        this->root->rLink = new nodeType<elemType>{30, nullptr, nullptr};
     }
 };
 
 int main() {
     temporaryTree<int> myTree;
+    myTree.buildManualTree();
 
-    cout << "Building a simple hardcoded tree..." << endl;
-    myTree.buildSimpleTree();
+    cout << "Nodes: " << myTree.treeNodeCount() << endl;
+    cout << "Leaves: " << myTree.treeLeavesCount() << endl;
 
-    // Testing Inorder: Left -> Root -> Right
-    cout << "\nInorder Traversal (Expected: 20 10 30):" << endl;
+    cout << "\nInorder Traversal (L-Root-R):   ";
     myTree.inorderTraversal();
-    cout << endl;
-
-    // Testing Preorder: Root -> Left -> Right
-    cout << "\nPreorder Traversal (Expected: 10 20 30):" << endl;
+    
+    cout << "\nPreorder Traversal (Root-L-R):  ";
     myTree.preorderTraversal();
-    cout << endl;
-
-    // Testing Postorder: Left -> Right -> Root
-    cout << "\nPostorder Traversal (Expected: 20 30 10):" << endl;
+    
+    cout << "\nPostorder Traversal (L-R-Root): ";
     myTree.postorderTraversal();
     cout << endl;
 

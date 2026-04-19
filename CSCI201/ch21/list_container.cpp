@@ -1,4 +1,6 @@
 // list_container.cpp
+// compile with: g++ list_container.cpp -o list_container.exe
+// run with: ./list_container.exe
 #include <iostream>
 #include <list>
 

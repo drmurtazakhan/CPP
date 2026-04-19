@@ -1,4 +1,6 @@
 // product_map_demo.cpp
+// compile with: g++ product_map_demo.cpp -o product_map_demo.exe
+// run with: ./product_map_demo.exe
 #include <iostream>
 #include <map>
 #include <string>

@@ -1,14 +1,14 @@
-///Ch15_FibonacciNumber.cpp
+/// Ch15_FibonacciNumber.cpp
 // How to compile: g++ Ch15_FibonacciNumber.cpp -o Ch15_Fibonacci.exe
 // How to run: ./Ch15_Fibonacci.exe
- 
+
 #include <iostream>
- 
+
 using namespace std;
- 
+
 int rFibNum(int n);
 
-int main() 
+int main()
 {
     int nth;
 
@@ -17,7 +17,7 @@ int main()
     cin >> nth;
     cout << endl;
 
-    cout << "The Fibonacci number at position " << nth 
+    cout << "The Fibonacci number at position " << nth
          << " is: " << rFibNum(nth) << endl;
 
     return 0;

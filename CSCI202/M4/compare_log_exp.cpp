@@ -18,7 +18,7 @@ int main()
     int logSteps = 0;
     for (int i = 1; i <= n; i = i * 2) 
     {
-        logSteps++;
+        logSteps++; //1, 2, 4, 8, 16, 32.
     }
 
     // 2. Exponential Complexity O(2^n)

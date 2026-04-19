@@ -1,4 +1,6 @@
 // range_based_reference_demo.cpp
+// compile with: g++ range_based_reference_demo.cpp -o range_based_reference_demo.exe
+// run with: ./range_based_reference_demo.exe
 #include <iostream>
 #include <vector>
 

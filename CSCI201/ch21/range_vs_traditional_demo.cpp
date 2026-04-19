@@ -1,4 +1,6 @@
 // range_vs_traditional_demo.cpp
+// compile with: g++ range_vs_traditional_demo.cpp -o range_vs_traditional_demo.exe
+// run with: ./range_vs_traditional_demo.exe
 #include <iostream>
 #include <vector>
 

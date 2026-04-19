@@ -1,4 +1,6 @@
 //common_stl_functions.cpp
+// compile with: g++ common_stl_functions.cpp -o common_stl_functions.exe
+// run with: ./common_stl_functions.exe
 #include <iostream>
 #include <vector>   // We'll use vector to demonstrate common functions
 

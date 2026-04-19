@@ -1,4 +1,6 @@
 // set_associative_container.cpp
+// compile with: g++ set_associative_container.cpp -o set_associative_container.exe
+// run with: ./set_associative_container.exe
 #include <iostream>
 #include <set>
 #include <string>

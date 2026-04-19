@@ -1,4 +1,6 @@
 // copy_between_lists.cpp
+// compile with: g++ copy_between_lists.cpp -o copy_between_lists.exe
+// run with: ./copy_between_lists.exe
 #include <iostream>
 #include <vector>
 #include <algorithm> // Required for copy

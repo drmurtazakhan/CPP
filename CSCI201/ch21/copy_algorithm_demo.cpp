@@ -1,4 +1,6 @@
 //copy_algorithm_demo.cpp
+// compile with: g++ copy_algorithm_demo.cpp -o copy_algorithm_demo.exe
+// run with: ./copy_algorithm_demo.exe
 #include <iostream>
 #include <vector>
 #include <algorithm> // Required for copy

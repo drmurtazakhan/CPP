@@ -1,4 +1,7 @@
 // vector_insert_demo.cpp
+// compile with: g++ vector_insert_demo.cpp -o vector_insert_demo.exe
+// run with: ./vector_insert_demo.exe
+
 #include <iostream>
 #include <vector>    // Needed to use the vector container
 #include <iterator>  // Needed for advanced iterator functions

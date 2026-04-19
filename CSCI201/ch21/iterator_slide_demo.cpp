@@ -1,4 +1,6 @@
 // iterator_slide_demo.cpp
+// compile with: g++ -o iterator_slide_demo iterator_slide_demo.cpp
+// run with: ./iterator_slide_demo
 #include <iostream>
 #include <vector>
 

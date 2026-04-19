@@ -1,3 +1,6 @@
+// stl_vector_iterator.cpp
+// compile with: g++ stl_vector_iterator.cpp -o stl_vector_iterator.exe
+// run with: ./stl_vector_iterator.exe
 #include <iostream>
 #include <vector> // Required for vector containers [cite: 739]
 

@@ -1,4 +1,6 @@
 //iterator_combined_demo.cpp
+// compile with: g++ -o iterator_combined_demo iterator_combined_demo.cpp
+// run with: ./iterator_combined_demo
 #include <iostream>
 #include <vector>
 #include <iterator> 

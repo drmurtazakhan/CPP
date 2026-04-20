@@ -159,9 +159,9 @@ void graphType::dft(int v, bool visited[])
 
     for (graphIt = graph[v].begin(); graphIt != graph[v].end(); ++graphIt)
     {
-        int w = *graphIt;
+        int w = *graphIt; // get the adjacent vertex
         if (!visited[w])
-            dft(w, visited);
+            dft(w, visited); // recursively visit the adjacent vertex
     }
 }
 

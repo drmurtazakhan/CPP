@@ -1,10 +1,10 @@
- 
 #ifndef H_graph
 #define H_graph
   
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <string>
 #include "linkedList.h"
 #include "unorderedLinkedList.h"
 #include "linkedQueue.h"
@@ -15,68 +15,26 @@ class graphType
 {
 public:
     bool isEmpty() const;
-      //Function to determine whether the graph is empty.
-      //Postcondition: Returns true if the graph is empty;
-      //               otherwise, returns false.
-
     void createGraph();
-      //Function to create a graph.
-      //Postcondition: The graph is created using the  
-      //               adjacency list representation.
+
+    // New overloaded function to allow hardcoding the filename
+    void createGraph(string fileName);
 
     void clearGraph();
-      //Function to clear graph.
-      //Postcondition: The memory occupied by each vertex 
-      //               is deallocated.
-
     void printGraph() const;
-      //Function to print graph.
-      //Postcondition: The graph is printed.
-
     void depthFirstTraversal();
-      //Function to perform the depth first traversal of
-      //the entire graph.
-      //Postcondition: The vertices of the graph are printed 
-      //               using depth first traversal algorithm.
-
     void dftAtVertex(int vertex);
-      //Function to perform the depth first traversal of 
-      //the graph at a node specified by the parameter vertex.
-      //Postcondition: Starting at vertex, the vertices are 
-      //               printed using depth first traversal 
-      //               algorithm.
-
     void breadthFirstTraversal();
-      //Function to perform the breadth first traversal of
-      //the entire graph.
-      //Postcondition: The vertices of the graph are printed 
-      //               using breadth first traversal algorithm.
-
-    graphType(int size = 0); 
-      //Constructor
-      //Postcondition: gSize = 0; maxSize = size;
-      //               graph is an array of pointers to linked
-      //               lists.
-
+    graphType(int size = 0);
     ~graphType();
-      //Destructor
-      //The storage occupied by the vertices is deallocated.
 
 protected:
-    int maxSize;    //maximum number of vertices
-    int gSize;      //current number of vertices
-    unorderedLinkedList<int> *graph; //array to create 
-                                     //adjacency lists 
+    int maxSize;    
+    int gSize;      
+    unorderedLinkedList<int> *graph; 
 
 private:
     void dft(int v, bool visited[]);
-      //Function to perform the depth first traversal of 
-      //the graph at a node specified by the parameter vertex.
-      //This function is used by the public member functions
-      //depthFirstTraversal and dftAtVertex.
-      //Postcondition: Starting at vertex, the vertices are 
-      //               printed using depth first traversal 
-      //               algorithm.
 };
 
 bool graphType::isEmpty() const
@@ -84,17 +42,10 @@ bool graphType::isEmpty() const
     return (gSize == 0);
 }
 
-void graphType::createGraph() 
+void graphType::createGraph()
 {
     ifstream infile;
     char fileName[50];
-
-    int index;
-    int vertex;
-    int adjacentVertex;
-
-    if (gSize != 0)	//if the graph is not empty, make it empty
-        clearGraph();
 
     cout << "Enter input file name: ";
     cin >> fileName;
@@ -108,9 +59,48 @@ void graphType::createGraph()
         return;
     }
 
-    infile >> gSize;  //get the number of vertices
+    infile >> gSize;
 
-    for (index = 0; index < gSize; index++)
+    for (int index = 0; index < gSize; index++)
+    {
+        int vertex;
+        int adjacentVertex;
+
+        infile >> vertex;
+        infile >> adjacentVertex;
+
+        while (adjacentVertex != -999)
+        {
+            graph[vertex].insertLast(adjacentVertex);
+            infile >> adjacentVertex;
+        }
+    }
+
+    infile.close();
+}
+
+// Implementation of the new overloaded function
+void graphType::createGraph(string fileName)
+{
+    ifstream infile;
+    int vertex;
+    int adjacentVertex;
+
+    infile.open(fileName.c_str());
+
+    if (!infile)
+    {
+        cout << "Cannot open input file." << endl;
+        return;
+    }
+
+    // If there is existing data, clear it before loading new file
+    if (gSize != 0)
+        clearGraph();
+
+    infile >> gSize;
+
+    for (int index = 0; index < gSize; index++)
     {
         infile >> vertex;
         infile >> adjacentVertex;
@@ -119,28 +109,23 @@ void graphType::createGraph()
         {
             graph[vertex].insertLast(adjacentVertex);
             infile >> adjacentVertex;
-        } //end while
-    } // end for
+        }
+    }
 
     infile.close();
-} //end createGraph
+}
 
 void graphType::clearGraph()
 {
-    int index;
-
-    for (index = 0; index < gSize; index++)
+    for (int index = 0; index < gSize; index++)
         graph[index].destroyList();
 
     gSize = 0;
-} //end clearGraph
-
+}
 
 void graphType::printGraph() const
 {
-    int index;
-
-    for (index = 0; index < gSize; index++)
+    for (int index = 0; index < gSize; index++)
     {
         cout << index << " ";
         graph[index].print();
@@ -148,48 +133,41 @@ void graphType::printGraph() const
     }
 
     cout << endl;
-} //end printGraph
+}
 
 void graphType::depthFirstTraversal()
 {
-    bool *visited; //pointer to create the array to keep 
-                   //track of the visited vertices
+    bool *visited; 
     visited = new bool[gSize];
 
-    int index;
-
-    for (index = 0; index < gSize; index++) 
+    for (int index = 0; index < gSize; index++)
         visited[index] = false;
-	
-        //For each vertex that is not visited, do a depth 
-        //first traverssal
-    for (index = 0; index < gSize; index++)	
-        if (!visited[index]) 
-            dft(index,visited);
+
+    for (int index = 0; index < gSize; index++)
+        if (!visited[index])
+            dft(index, visited);
+
     delete [] visited;
-} //end depthFirstTraversal
+}
 
 void graphType::dft(int v, bool visited[])
 {
     visited[v] = true;
-    cout << " " << v << " ";  //visit the vertex
+    cout << v << " ";
 
     linkedListIterator<int> graphIt;
 
-      //for each vertex adjacent to v
-    for (graphIt = graph[v].begin(); graphIt != graph[v].end();
-                                     ++graphIt)
+    for (graphIt = graph[v].begin(); graphIt != graph[v].end(); ++graphIt)
     {
         int w = *graphIt;
         if (!visited[w])
             dft(w, visited);
-    } //end while
-} //end dft
+    }
+}
 
 void graphType::dftAtVertex(int vertex)
 {
     bool *visited;
-
     visited = new bool[gSize];
 
     for (int index = 0; index < gSize; index++)
@@ -198,8 +176,7 @@ void graphType::dftAtVertex(int vertex)
     dft(vertex, visited);
 
     delete [] visited;
-} // end dftAtVertex
-
+}
 
 void graphType::breadthFirstTraversal()
 {
@@ -209,8 +186,7 @@ void graphType::breadthFirstTraversal()
     visited = new bool[gSize];
 
     for (int ind = 0; ind < gSize; ind++)
-        visited[ind] = false;	//initialize the array 
-                                //visited to false
+        visited[ind] = false;
 
     linkedListIterator<int> graphIt;
 
@@ -226,8 +202,7 @@ void graphType::breadthFirstTraversal()
                 int u = queue.front();
                 queue.deleteQueue();
 
-                for (graphIt = graph[u].begin(); 
-                     graphIt != graph[u].end(); ++graphIt)
+                for (graphIt = graph[u].begin(); graphIt != graph[u].end(); ++graphIt)
                 {
                     int w = *graphIt;
                     if (!visited[w])
@@ -237,13 +212,12 @@ void graphType::breadthFirstTraversal()
                         cout << " " << w << " ";
                     }
                 }
-            } //end while
+            }
         }
 		
     delete [] visited;
-} //end breadthFirstTraversal
+}
 
-    //Constructor
 graphType::graphType(int size)
 {
     maxSize = size;
@@ -251,10 +225,10 @@ graphType::graphType(int size)
     graph = new unorderedLinkedList<int>[size];
 }
 
-    //Destructor
 graphType::~graphType()
 {
     clearGraph();
+    delete [] graph;
 }
 
 #endif

@@ -83,3 +83,7 @@ Terminal: Ctrl +  ` (The backtick key, just below the Esc key).
 Settings: Ctrl + , (comma) to 
 autoformat: Shift + Alt + F
 AI chat : Ctrl + Alt + I
+
+Zoom In UI & Editor	Ctrl + +
+Zoom Out UI & Editor	Ctrl + -
+Reset Zoom	Ctrl + 0

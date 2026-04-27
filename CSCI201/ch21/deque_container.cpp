@@ -1,4 +1,6 @@
 // deque_container.cpp
+// compile with: g++ deque_container.cpp -o deque_container.exe
+// run with: ./deque_container.exe
 #include <iostream>
 #include <deque>
 

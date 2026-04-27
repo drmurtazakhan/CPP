@@ -1,4 +1,6 @@
-// multimap_domo.cpp
+// multimap_demo.cpp
+// compile with: g++ multimap_demo.cpp -o multimap_demo.exe
+// run with: ./multimap_demo.exe
 #include <iostream>
 #include <map>
 #include <string>

@@ -1,4 +1,6 @@
 // vector_vs_map_find.cpp
+// compile with: g++ vector_vs_map_find.cpp -o vector_vs_map_find.exe
+// run with: ./vector_vs_map_find.exe
 #include <iostream>
 #include <vector>
 #include <map>

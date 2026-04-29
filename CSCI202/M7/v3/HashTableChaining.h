@@ -11,24 +11,16 @@ const int HTSize = 10;
 
 // Hash Table using Chaining (Open Hashing)
 class HashTableChaining {
-private:
-    // Array of linked lists (STL list)
-    list<int> HT[HTSize];
+private:    
+    list<int> HT[HTSize]; // Array of linked lists (STL list)
 
-    // Hash function
-    int hashFunction(int key);
+    int hashFunction(int key); // Hash function
 
 public:
-    // Insert key
+    
     void insert(int key);
-
-    // Search key
     bool search(int key);
-
-    // Delete key
     void remove(int key);
-
-    // Display table
     void display();
 };
 

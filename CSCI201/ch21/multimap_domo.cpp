@@ -1,6 +1,6 @@
-// multimap_demo.cpp
-// compile with: g++ multimap_demo.cpp -o multimap_demo.exe
-// run with: ./multimap_demo.exe
+// multimap_domo.cpp
+// compile with: g++ multimap_domo.cpp -o multimap_domo.exe
+// run with: ./multimap_domo.exe
 #include <iostream>
 #include <map>
 #include <string>
@@ -17,8 +17,8 @@ int main() {
 
     // --- THE TRICK: Creating Nicknames ---
     // We create 'start' and 'finish' as aliases for the confusing names
-    auto& start  = result.first; // result.first: A pointer to the start of the "101" group.
-    auto& finish = result.second; // result.second: A pointer to the end of the "101" group.
+    auto& start  = result.first;
+    auto& finish = result.second;
 
     cout << "Applicants for Job " << searchID << ":" << endl;
 

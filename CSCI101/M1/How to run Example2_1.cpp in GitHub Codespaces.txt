@@ -1,0 +1,51 @@
+How to run Example2_1.cpp in GitHub Codespaces
+
+### Step 1: Open the Repository in Codespaces
+
+Open your repository: CPP
+
+https://github.com/drmurtazakhan/CPP
+
+1. Click the green **Code** button.
+2. Select the **Codespaces** tab.
+3. Click **Create codespace on main**.
+4. Wait for the Codespace to start. GitHub will open a VS Code-like environment in your browser. ([GitHub][1])
+
+### Step 2: Navigate to the File
+
+Open the Terminal (**Terminal → New Terminal**) and run:
+
+```bash
+cd CSCI101/M1
+ls
+```
+
+You should see:
+
+```text
+Example2_1.cpp
+```
+
+### Step 3: Compile the Program
+
+Most Codespaces images already include `g++`. Verify:
+
+```bash
+g++ --version
+```
+
+Then compile:
+
+```bash
+g++ Example2_1.cpp -o Example2_1
+```
+
+### Step 4: Run the Program
+
+```bash
+./Example2_1
+```
+
+You should see the program output in the terminal.
+
+---

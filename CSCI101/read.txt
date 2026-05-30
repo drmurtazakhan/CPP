@@ -1,0 +1,11 @@
+About
+This repository contains C++ programs and course materials related to CSCI 101: Computer Science I
+
+References
+D. S. Malik, C++ Programming: Program Design Including Data Structures
+
+AI Assistance
+The following AI tools were used to assist with coding, debugging, documentation, and explanations:
+* OpenAI ChatGPT
+* Google Gemini
+

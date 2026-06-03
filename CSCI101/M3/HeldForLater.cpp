@@ -1,6 +1,6 @@
-// HelpForLater.cpp
-// compile: g++ HelpForLater.cpp -o HelpForLater.exe
-// run:     ./HelpForLater.exe
+// HeldForLater.cpp
+// compile: g++ HeldForLater.cpp -o HeldForLater.exe
+// run:     ./HeldForLater.exe
 // Demonstration of "held for later input"
 
 #include <iostream>

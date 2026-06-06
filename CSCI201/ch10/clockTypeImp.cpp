@@ -1,7 +1,10 @@
-//Implementation File for the class clockType
-    
-#include <iostream> 
-#include "clockType.h" 
+// Implementation File for the class clockType
+//  clockTypeImp.cpp
+//  compile: g++ clockTypeImp.cpp -o clockTypeImp.exe
+//  run: clockTypeImp.exe
+
+#include <iostream>
+#include "clockType.h"
 
 using namespace std;
 
@@ -9,21 +12,21 @@ void clockType::setTime(int hours, int minutes, int seconds)
 {
     if (0 <= hours && hours < 24)
         hr = hours;
-    else 
+    else
         hr = 0;
 
     if (0 <= minutes && minutes < 60)
         min = minutes;
-    else 
+    else
         min = 0;
 
     if (0 <= seconds && seconds < 60)
         sec = seconds;
-    else 
+    else
         sec = 0;
 }
 
-void clockType::getTime(int& hours, int& minutes, int& seconds) const
+void clockType::getTime(int &hours, int &minutes, int &seconds) const
 {
     hours = hr;
     minutes = min;
@@ -73,32 +76,30 @@ void clockType::printTime() const
     cout << sec;
 }
 
-bool clockType::equalTime(const clockType& otherClock) const
+bool clockType::equalTime(const clockType &otherClock) const
 {
-    return (hr == otherClock.hr 
-            && min == otherClock.min 
-            && sec == otherClock.sec);
+    return (hr == otherClock.hr && min == otherClock.min && sec == otherClock.sec);
 }
 
 clockType::clockType(int hours, int minutes, int seconds)
 {
     if (0 <= hours && hours < 24)
         hr = hours;
-    else 
+    else
         hr = 0;
 
     if (0 <= minutes && minutes < 60)
         min = minutes;
-    else 
+    else
         min = 0;
 
     if (0 <= seconds && seconds < 60)
         sec = seconds;
-    else 
+    else
         sec = 0;
 }
 
-clockType::clockType()  //default constructor
+clockType::clockType() // default constructor
 {
     hr = 0;
     min = 0;

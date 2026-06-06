@@ -1,7 +1,7 @@
 // The user program that uses the class clockType
 //  testClockClass.cpp
 //  compile: g++ testClockClass.cpp clockTypeImp.cpp -o testClockClass.exe
-//  run: testClockClass.exe
+//  run: ./testClockClass.exe
 
 #include <iostream>
 #include "clockType.h"

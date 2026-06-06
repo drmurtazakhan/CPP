@@ -33,7 +33,7 @@ int main()
     topStudent.print();
 
     // 2. This line will cause a COMPILE ERROR!
-    // Student blankStudent;
+    Student blankStudent;
 
     return 0;
 }

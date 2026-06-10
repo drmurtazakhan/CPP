@@ -1,3 +1,6 @@
+// StudentStructTest2.cpp
+// Compile: g++  StudentStructTest2.cpp -o StudentStructTest2.exe
+// Run:     ./StudentStructTest2.exe
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -5,7 +8,8 @@
 using namespace std;
 
 // 1. Define the struct (The Blueprint)
-struct studentType {
+struct studentType
+{
     string firstName;
     string lastName;
     char courseGrade;
@@ -18,10 +22,11 @@ struct studentType {
 // We use 'const' because printing shouldn't modify the data
 void printStudentRecord(const studentType &s);
 
-int main() {
+int main()
+{
     // 3. Declare and initialize
     // Using {} to avoid the "garbage values" you saw earlier!
-    studentType newStudent = {}; 
+    studentType newStudent = {};
 
     // Assigning values
     newStudent.firstName = "John";
@@ -32,8 +37,7 @@ int main() {
     newStudent.programmingScore = 98;
 
     // 4. Call the separate function to print
-    printStudentRecord(newStudent);    
-
+    printStudentRecord(newStudent);
 
     // Demonstrating with another student
     studentType student = {};
@@ -44,13 +48,14 @@ int main() {
 }
 
 // 5. Function Definition
-void printStudentRecord(const studentType &s) {
+void printStudentRecord(const studentType &s)
+{
     cout << "--- Student Record ---" << endl;
     cout << "Name: " << s.firstName << " " << s.lastName << endl;
     cout << "Course Grade: " << s.courseGrade << endl;
     cout << "Test Score: " << s.testScore << endl;
     cout << "Programming Score: " << s.programmingScore << endl;
-    
+
     cout << fixed << setprecision(2);
     cout << "GPA: " << s.GPA << endl;
     cout << "----------------------" << endl;

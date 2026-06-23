@@ -5,12 +5,17 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    // 1. Comparing integers
+int main()
+{
+    // Comparing integers
     // 4 is less than 6, so this is TRUE. It will print 1.
     cout << "Is 4 < 6? Result: " << (4 < 6) << endl;
 
-    // 2. Comparing characters
+    // Comparing characters
+    // '4' is less than '6', so this is TRUE. It will print 1.
+    cout << "Is '4' < '6'? Result: " << ('4' < '6') << endl;
+
+    // Comparing characters
     // 'R' comes BEFORE 'T' in the alphabet, so 'R' has a smaller ASCII value than 'T'.
     // Therefore, 'R' > 'T' is FALSE. It will print 0.
     cout << "Is 'R' > 'T'? Result: " << ('R' > 'T') << endl;

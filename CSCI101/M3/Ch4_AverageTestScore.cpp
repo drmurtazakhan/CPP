@@ -18,6 +18,8 @@ int main()
         double test1, test2, test3, test4, test5;
         double average;
 
+        int setwValue = 8; // width value for output formatting
+
         string firstName;
         string lastName;
 
@@ -42,14 +44,14 @@ int main()
                 << " " << lastName << endl;
 
         inFile >> test1 >> test2 >> test3 >> test4 >> test5;
-        outFile << "Test scores: " << setw(4) << test1
-                << setw(4) << test2 << setw(4) << test3
-                << setw(4) << test4 << setw(4) << test5
+        outFile << "Test scores: " << setw(setwValue) << test1
+                << setw(setwValue) << test2 << setw(setwValue) << test3
+                << setw(setwValue) << test4 << setw(setwValue) << test5
                 << endl;
 
         average = (test1 + test2 + test3 + test4 + test5) / 5.0;
 
-        outFile << "Average test score: " << setw(6)
+        outFile << "Average test score: " << setw(setwValue)
                 << average << endl;
 
         inFile.close();

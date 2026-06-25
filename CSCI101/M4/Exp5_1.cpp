@@ -6,7 +6,6 @@
  */
 
 #include <iostream>
-
 using namespace std;
 
 int main()
@@ -22,9 +21,8 @@ int main()
         // This is the update step (LCV). Without this, the loop
         // would run forever because i would always be 0.
         i = i + 5;
-
-        cout << endl;
     }
+    cout << endl;
 
     return 0;
 }

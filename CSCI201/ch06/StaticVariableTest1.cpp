@@ -1,7 +1,10 @@
+// compile with: g++ StaticVariableTest1.cpp -o StaticVariableTest1.exe
+// run: ./StaticVariableTest1.exe
 #include <iostream>
 using namespace std;
 
-void countDemo() {
+void countDemo()
+{
     int normalVar = 0;        // Normal variable
     static int staticVar = 0; // Static variable
 
@@ -11,7 +14,8 @@ void countDemo() {
     cout << "Normal: " << normalVar << " | Static: " << staticVar << endl;
 }
 
-int main() {
+int main()
+{
     countDemo(); // Call 1
     countDemo(); // Call 2
     countDemo(); // Call 3

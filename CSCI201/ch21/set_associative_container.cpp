@@ -1,6 +1,6 @@
 // set_associative_container.cpp
-// compile with: g++ set_associative_container.cpp -o set_associative_container.exe
-// run with: ./set_associative_container.exe
+// Compile: g++ set_associative_container.cpp -o set_associative_container.exe
+// Run: ./set_associative_container.exe
 #include <iostream>
 #include <set>
 #include <string>
@@ -8,15 +8,18 @@
 using namespace std;
 
 // Separate function to print set elements in a simple way
-void displaySet(const string& message, const set<int>& s) {
+void displaySet(const string &message, const set<int> &s)
+{
     cout << message << ": ";
-    for (int n : s) {
+    for (int n : s)
+    {
         cout << n << " ";
     }
     cout << endl;
 }
 
-int main() {
+int main()
+{
     // 1. Initial items (Notice they are out of order here)
     set<int> myNumbers = {40, 10, 30};
     displaySet("Initial set (automatically sorted)", myNumbers);

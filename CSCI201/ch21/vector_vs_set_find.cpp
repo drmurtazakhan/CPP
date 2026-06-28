@@ -1,6 +1,6 @@
 // vector_vs_set_find.cpp
-// compile with: g++ vector_vs_set_find.cpp -o vector_vs_set_find.exe
-// run with: ./vector_vs_set_find.exe
+// Compile: g++ vector_vs_set_find.cpp -o vector_vs_set_find.exe
+// Run: ./vector_vs_set_find.exe
 #include <iostream>
 #include <vector>
 #include <set>
@@ -8,28 +8,31 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
     int target = 3002;
 
     // --- VECTOR SEARCH ---
     // A simple list of product codes
     vector<int> v = {1001, 2005, 3002, 4001};
-    
+
     // We use the external algorithm 'find'
     auto vIt = find(v.begin(), v.end(), target);
 
-    if (vIt != v.end()) {
+    if (vIt != v.end())
+    {
         cout << "Vector: Found " << *vIt << " by checking elements in order." << endl;
     }
 
     // --- SET SEARCH ---
     // An associative collection of product codes
     set<int> s = {1001, 2005, 3002, 4001};
-    
+
     // Set has its own 'smart' find member function
     auto sIt = s.find(target);
 
-    if (sIt != s.end()) {
+    if (sIt != s.end())
+    {
         cout << "Set: Found " << *sIt << " instantly using its internal tree." << endl;
     }
 

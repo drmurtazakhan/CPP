@@ -1,3 +1,5 @@
+// compile with: g++ SecretTest.cpp -o SecretTest.exe
+// run: ./SecretTest.exe
 #include <iostream>
 using namespace std;
 
@@ -7,7 +9,7 @@ int secret(int x);
 int main()
 {
 
-    int x = 4;
+    int x = 6;
     int result = secret(x);
 
     cout << " x = " << x << endl;
@@ -21,5 +23,5 @@ int secret(int x)
 {
     if (x > 5)
         return 2 * x;
-    //return x;
+    return x;
 }

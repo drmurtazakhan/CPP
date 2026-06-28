@@ -1,12 +1,13 @@
 // iterator_slide_demo.cpp
-// compile with: g++ -o iterator_slide_demo iterator_slide_demo.cpp
-// run with: ./iterator_slide_demo
+// compile with: g++ iterator_slide_demo.cpp -o iterator_slide_demo.exe
+// run with: ./iterator_slide_demo.exe
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-int main() {
+int main()
+{
     // 1. Setup the list
     vector<int> scores = {70, 80, 90, 100};
 
@@ -18,7 +19,7 @@ int main() {
 
     // 4. Extract the two different types of information
     int index = it - scores.begin(); // The "Where" (Position)
-    int value = *it;                // The "What" (Data)
+    int value = *it;                 // The "What" (Data)
 
     cout << "Iterator is at index: " << index << endl;
     cout << "The value stored there is: " << value << endl;

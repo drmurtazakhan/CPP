@@ -4,18 +4,19 @@
 
 #include "HashTableChaining.h"
 
-int main() {
+int main()
+{
     HashTableChaining ht;
 
     // Insert elements (some will collide)
-    ht.insert(11);   // index 1
-    ht.insert(21);   // index 1 (collision)
-    ht.insert(31);   // index 1 (collision)
+    ht.insert(11); // index 1
+    ht.insert(21); // index 1 (collision)
+    ht.insert(31); // index 1 (collision)
 
-    ht.insert(12);   // index 2
-    ht.insert(22);   // index 2 (collision)
+    ht.insert(12); // index 2
+    ht.insert(22); // index 2 (collision)
 
-    ht.insert(5);    // index 5
+    ht.insert(5); // index 5
 
     // Display table
     ht.display();

@@ -1,6 +1,5 @@
 /*
  * File name: CounterControlledWhileLoop.cpp
- * This program demonstrates a functional while loop.
  * Compile: g++ CounterControlledWhileLoop.cpp -o CounterControlledWhileLoop.exe
  * Run: ./CounterControlledWhileLoop.exe
  */
@@ -10,26 +9,18 @@ using namespace std;
 
 int main()
 {
-    // counter is used to keep track of how many times the loop has executed.
+    // 1. Initialization: Set the counter to start at 0
     int counter = 0;
+    int N = 5; // We want to execute the loop exactly 5 times
 
-    int i = 0;
-    // The loop body consists of everything between { and }
-    while (i <= 20)
+    // 2. Testing: The loop continues as long as counter is less than N
+    while (counter < N)
     {
+        cout << "Executing loop iteration " << counter + 1 << endl;
+
+        // 3. Updating: Increment the counter so we eventually reach N
         counter++;
-
-        // These lines will execute as long as i is 20 or less
-        cout << i << " ";
-
-        // This is the update step (LCV). Without this, the loop
-        // would run forever because i would always be 0.
-        i = i + 5;
     }
-    cout << endl;
-
-    cout << "Outside the loop, i = " << i << endl;
-    cout << "The loop executed " << counter << " times." << endl;
 
     return 0;
 }

@@ -1,8 +1,8 @@
 /*
- * File name: Exp5_1.cpp
+ * File name: Exp5_1_v2.cpp
  * This program demonstrates a functional while loop.
- * Compile: g++ Exp5_1.cpp -o Exp5_1.exe
- * Run: ./Exp5_1.exe
+ * Compile: g++ Exp5_1_v2.cpp -o Exp5_1_v2.exe
+ * Run: ./Exp5_1_v2.exe
  */
 
 #include <iostream>
@@ -13,7 +13,7 @@ int main()
     int i = 0;
 
     // The loop body consists of everything between { and }
-    while (i <= 20)
+    while (i < 20)
     {
         // These lines will execute as long as i is 20 or less
         cout << i << " ";

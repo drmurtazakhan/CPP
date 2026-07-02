@@ -32,6 +32,7 @@ int main()
     cout << "\nEnter calories burned for 7 days (Method 2): ";
     for (int i = 1; i <= 7; i++)
     {
+        cout << "Day " << i << ": ";
         cin >> dailyCalories;                    // Read input into the same variable
         sumMethod2 = sumMethod2 + dailyCalories; // Add to the accumulator
     }

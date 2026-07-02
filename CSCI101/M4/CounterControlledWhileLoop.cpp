@@ -14,7 +14,7 @@ int main()
     int N = 5; // We want to execute the loop exactly 5 times
 
     // 2. Testing: The loop continues as long as counter is less than N
-    while (counter < N)
+    while (counter <= N)
     {
         cout << "Executing loop iteration " << counter + 1 << endl;
 
@@ -22,5 +22,6 @@ int main()
         counter++;
     }
 
+    cout << "Outside loop value of Counter = " << counter << endl;
     return 0;
 }

@@ -22,8 +22,7 @@ int main()
     cout << "\n--- Without braces: ---" << endl;
     for (int i = 1; i <= 5; i++)
         cout << "Hello!" << endl; // Only this is in the loop
-
-    cout << "*" << endl; // This runs only once AFTER the loop ends
+    cout << "*" << endl;          // This runs only once AFTER the loop ends
 
     return 0;
 }

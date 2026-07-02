@@ -20,8 +20,8 @@ int main()          // Line 5
     bool isGuessed; // boolean variable to control
                     // the loop                       Line 10
 
-    srand(time(0));     // Line 11
-    num = rand() % 100; // Line 12
+    srand(time(0));    // Line 11
+    num = rand() % 20; // Line 12
 
     isGuessed = false; // Line 13
 
@@ -29,7 +29,7 @@ int main()          // Line 5
     {                  // Line 15
         cout << "Enter an integer greater"
              << " than or equal to 0 and "
-             << "less than 100: "; // Line 16
+             << "less than 20: "; // Line 16
 
         cin >> guess; // Line 17
         cout << endl; // Line 18

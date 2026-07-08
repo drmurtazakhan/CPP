@@ -59,7 +59,7 @@ int main()
     // Even though both enums have similar values,
     // the compiler treats them as separate data types.
     //
-    // languages = foreignLanguages;   // ERROR
+    // languages = foreignLanguages; // ERROR
 
     return 0;
 }

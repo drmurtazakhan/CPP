@@ -87,3 +87,8 @@ AI chat : Ctrl + Alt + I
 Zoom In UI & Editor	Ctrl + +
 Zoom Out UI & Editor	Ctrl + -
 Reset Zoom	Ctrl + 0
+
+rename all occurrences of a variable at once
+Click on the variable you want to rename.
+Press F2 on your keyboard.
+Type the new name and press Enter.

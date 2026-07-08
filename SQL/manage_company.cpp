@@ -20,16 +20,18 @@ int callback(void *data, int argc, char **argv, char **azColName)
 int main()
 {
     sqlite3 *DB;
+
+    // 1. Open (or create) the database
     if (sqlite3_open("company.db", &DB) != SQLITE_OK)
     {
         std::cerr << "Failed to open database." << std::endl;
         return -1;
     }
 
-    // 1. Insert records into the EMPLOYEE table
+    // 2. Insert records into the EMPLOYEE table
     std::string insertSQL =
-        "INSERT INTO EMPLOYEE (ID, NAME, ROLE) VALUES (1, 'Alice Smith', 'Database Engineer');"
-        "INSERT INTO EMPLOYEE (ID, NAME, ROLE) VALUES (2, 'Bob Jones', 'Data Analyst');";
+        "INSERT INTO EMPLOYEE (ID, NAME, ROLE) VALUES (3, 'Alice Smith', 'Database Engineer');"
+        "INSERT INTO EMPLOYEE (ID, NAME, ROLE) VALUES (5, 'Bob Jones', 'Data Analyst');";
 
     char *errMsg = nullptr;
     int rc = sqlite3_exec(DB, insertSQL.c_str(), NULL, 0, &errMsg);
@@ -46,7 +48,7 @@ int main()
 
     std::cout << "\n--- Fetching Employee Records ---" << std::endl;
 
-    // 2. Query data using the callback function
+    // 3. SELECT and Display Records - Query data using the callback function
     std::string selectSQL = "SELECT * FROM EMPLOYEE;";
     rc = sqlite3_exec(DB, selectSQL.c_str(), callback, NULL, &errMsg);
 

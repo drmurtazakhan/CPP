@@ -1,10 +1,14 @@
+// swap_overload.cpp
+// compile: g++ swap_overload.cpp -o swap_overload.exe
+// run: ./swap_overload.exe
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 // 1. Version for Integers
-void mySwap(int &a, int &b) {
+void mySwap(int &a, int &b)
+{
     int temp = a;
     a = b;
     b = temp;
@@ -12,13 +16,15 @@ void mySwap(int &a, int &b) {
 
 // 2. Version for Strings (Overloaded)
 // Notice it has the exact same name, but different parameter types!
-void mySwap(string &a, string &b) {
+void mySwap(string &a, string &b)
+{
     string temp = a;
     a = b;
     b = temp;
 }
 
-int main() {
+int main()
+{
     // Testing Integers
     int num1 = 10, num2 = 20;
     cout << "Before Int Swap: " << num1 << ", " << num2 << endl;

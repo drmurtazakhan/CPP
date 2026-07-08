@@ -7,29 +7,29 @@
 
 using namespace std;
 
-int main() 
+int main()
 {
     int n;
-    cout << "Enter a small value for n (suggested 5 to 28): ";
+    cout << "Enter a value for n (suggested 32): ";
     cin >> n;
 
-    // 1. Logarithmic Complexity O(log2 n)
-    // This loop doubles the counter, reaching n very quickly.
-    int logSteps = 0;
-    for (int i = 1; i <= n; i = i * 2) 
+    // 1. Logarithmic Complexity O(log n)
+    // This loop repeatedly divides the problem size by 2.
+    long long logSteps = 0;
+    for (long long i = n; i > 1; i /= 2)
     {
-        logSteps++; //1, 2, 4, 8, 16, 32.
+        logSteps++; // Example for n = 32: 32, 16, 8, 4, 2, 1
     }
 
     // 2. Exponential Complexity O(2^n)
     // This loop runs 2 raised to the power of n times.
-    // We use a long long because the number gets huge very fast.
+    // We use long long because the number of iterations grows very quickly.
     long long expSteps = 0;
-    long long limit = pow(2, n); // This defines how many times our loop must run
+    long long limit = pow(2, n); // Total number of loop iterations
 
     cout << "...Calculating Exponential Loop (this may take a moment)..." << endl;
-    
-    for (long long i = 0; i < limit; i++) 
+
+    for (long long i = 0; i < limit; i++)
     {
         expSteps++;
     }

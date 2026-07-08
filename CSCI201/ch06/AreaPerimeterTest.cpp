@@ -1,10 +1,14 @@
+// AreaPerimeterTest.cpp
+// compile: g++ AreaPerimeterTest.cpp -o AreaPerimeterTest.exe
+// run: ./AreaPerimeterTest.exe
 #include <iostream>
 using namespace std;
 
 // Function Prototype
 void areaAndPerimeter(double length, double width);
 
-int main() {
+int main()
+{
     double l = 5.0;
     double w = 3.0;
 
@@ -15,12 +19,13 @@ int main() {
 }
 
 // Function Definition
-void areaAndPerimeter(double length, double width) {
+void areaAndPerimeter(double length, double width)
+{
     // Calculations
     double area = length * width;
     double perimeter = 2 * (length + width);
 
-    // Printing inside the function as requested    
+    // Printing inside the function as requested
     cout << "Calculated Area: " << area << endl;
     cout << "Calculated Perimeter: " << perimeter << endl;
 }

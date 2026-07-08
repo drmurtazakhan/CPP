@@ -1,5 +1,9 @@
 // create_company.cpp
+
 // Compile step 1: gcc -c sqlite3.c -o sqlite3.o
+// Once sqlite3.o is created then no need to compile sqlite3.c again unless you want to update it.
+// You can directly compile the other source files with sqlite3.o.
+
 // Compile step 2: g++ create_company.cpp sqlite3.o -o create_company.exe
 // run: ./create_company.exe
 
@@ -46,5 +50,6 @@ int main()
 
     // 4. Close the database connection
     sqlite3_close(DB);
+
     return 0;
 }

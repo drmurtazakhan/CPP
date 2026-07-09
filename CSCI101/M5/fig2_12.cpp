@@ -1,3 +1,8 @@
+/*
+Warning: This code contains a logical error in the while loop condition.
+loop may run indefinitely if the number is not found.
+*/
+
 // compile: g++ fig2_12.cpp -o fig2_12.exe
 // run: ./fig2_12.exe
 #include <iostream>

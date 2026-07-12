@@ -1,0 +1,5 @@
+Student 1 Scores: 75 50 90 | Average: 71.67
+Student 2 Scores: 65 90 85 | Average: 80.00
+Student 3 Scores: 80 80 80 | Average: 80.00
+Student 4 Scores: 95 70 60 | Average: 75.00
+Student 5 Scores: 50 60 70 | Average: 60.00

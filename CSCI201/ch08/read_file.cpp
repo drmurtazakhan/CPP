@@ -1,6 +1,6 @@
-// File name: read_poem.cpp
-// compile: g++ read_poem.cpp -o read_poem.exe
-// run: ./read_poem.exe
+// File name: read_file.cpp
+// compile: g++ read_file.cpp -o read_file.exe
+// run: ./read_file.exe
 
 #include <iostream>
 #include <fstream> // Required for file input/output

@@ -25,5 +25,16 @@ int main()
     // Display the calculated sum
     cout << "The total sum is: " << sum << endl;
 
+    // Use a range-based for loop to add each element in 'list' to 'sum'
+    // This reads as: "for each 'num' in 'list'"
+    sum = 0;
+    for (auto num : list)
+    {
+        sum = sum + num;
+    }
+
+    // Display the calculated sum
+    cout << "The total sum is: " << sum << endl;
+
     return 0;
 }

@@ -37,6 +37,8 @@ int main()
 
     cout << "Popular sport value: " << popularSport << endl;
 
+    cout << "Now Popular sport value: " << static_cast<sports>(popularSport + 1) << endl;
+
     cout << endl;
     cout << "List of sports:" << endl;
 

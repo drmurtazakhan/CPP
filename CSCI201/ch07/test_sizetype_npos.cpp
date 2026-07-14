@@ -8,26 +8,34 @@ int main()
 {
     std::string text = "Hello, welcome to C++ programming!";
 
-    // 1. Using string::size_type to store the position index
-    // We search for the word "welcome" using the find() function
-    std::string::size_type position = text.find("welcome");
+    // ---------------------------------------------------------
+    // 1. Searching for "welcome"
+    // ---------------------------------------------------------
+    std::string::size_type pos1 = text.find("welcome");
 
-    // 2. Checking if the word was found by comparing it to string::npos
-    if (position != std::string::npos)
-    {
-        std::cout << "'welcome' found at index position: " << position << "\n";
-    }
-    else
+    // Using the '==' operator and an if-else block
+    if (pos1 == std::string::npos)
     {
         std::cout << "'welcome' was not found in the string.\n";
     }
+    else
+    {
+        std::cout << "'welcome' was found at index position: " << pos1 << "\n";
+    }
 
-    // 3. Another search that will fail to show how npos acts as "not found"
-    std::string::size_type failPosition = text.find("Java");
+    // ---------------------------------------------------------
+    // 2. Searching for "Java"
+    // ---------------------------------------------------------
+    std::string::size_type pos2 = text.find("Java");
 
-    if (failPosition == std::string::npos)
+    // Using the exact same '==' operator and an if-else block
+    if (pos2 == std::string::npos)
     {
         std::cout << "'Java' was not found (returned string::npos).\n";
+    }
+    else
+    {
+        std::cout << "'Java' was found at index position: " << pos2 << "\n";
     }
 
     return 0;

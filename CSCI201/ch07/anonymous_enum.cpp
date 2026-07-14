@@ -11,13 +11,6 @@ int main()
     // Anonymous enumeration type:
     // The enum does not have a type name.
     // The variable "languages" is created directly.
-    //
-    // Values are assigned automatically:
-    // ENGLISH = 0
-    // FRENCH  = 1
-    // SPANISH = 2
-    // GERMAN  = 3
-    // RUSSIAN = 4
 
     enum
     {
@@ -27,10 +20,6 @@ int main()
         GERMAN,
         RUSSIAN
     } languages;
-
-    // Another anonymous enumeration type.
-    // Even though it contains the same values,
-    // it is a DIFFERENT data type from the previous enum.
 
     enum
     {

@@ -21,28 +21,5 @@ int main()
 
     cout << "Age: " << age << endl;
 
-    // Create a user-defined Boolean type.
-    // Boolean is just another name for int.
-    typedef int Boolean;
-
-    // Define constants for true and false.
-    const Boolean TRUE = 1;
-    const Boolean FALSE = 0;
-
-    // Declare a Boolean variable.
-    Boolean flag;
-
-    // Assign TRUE value to flag.
-    flag = TRUE;
-
-    if (flag == TRUE)
-    {
-        cout << "Flag is TRUE" << endl;
-    }
-    else
-    {
-        cout << "Flag is FALSE" << endl;
-    }
-
-    return 0;
+        return 0;
 }

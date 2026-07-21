@@ -32,6 +32,8 @@ int main()
         paintSale[paint] = 0.0;
     }
 
+    cout << "Sales for RED paint: " << paintSale[RED] << endl;
+
     // Update the sales figure for RED paint specifically
     paintSale[RED] = paintSale[RED] + 75.69;
 

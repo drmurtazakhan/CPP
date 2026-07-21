@@ -36,7 +36,7 @@ int main()
     cout << "Test Score: " << newStudent.testScore << endl;
     cout << "Programming Score: " << newStudent.programmingScore << endl;
 
-    // Setting precision to 1 decimal place for GPA
+    // Setting precision to 2 decimal places for GPA
     cout << fixed << setprecision(2);
     cout << "GPA: " << newStudent.GPA << endl;
 

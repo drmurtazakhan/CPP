@@ -37,7 +37,7 @@ int main()
     }
 
     // Another example
-    if (BROWN < YELLOW)
+    if (BROWN > YELLOW)
     {
         cout << "BROWN comes before YELLOW." << endl;
     }

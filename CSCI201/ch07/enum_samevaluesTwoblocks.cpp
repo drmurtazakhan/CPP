@@ -6,7 +6,7 @@
 
 int main()
 {
-    bool condition = false; // Change this to true or false to test both blocks
+    bool condition = true; // Change this to true or false to test both blocks
 
     if (condition)
     {

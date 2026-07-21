@@ -1,6 +1,8 @@
 // ArrayInStruct.cpp
 // Compile: g++  ArrayInStruct.cpp -o ArrayInStruct.exe
 // Run:     ./ArrayInStruct.exe
+
+// This program demonstrates how to use a struct that contains an array to store a list of integers
 #include <iostream>
 using namespace std;
 

@@ -10,7 +10,8 @@ int main()
 {
     // Method 1: Initializing by listing each character.
     // We must manually include the null terminator '\0'.
-    char name1[16] = {'J', 'o', 'h', 'n', '\0'};
+    // char name1[16] = {'J', 'o', 'h', 'n', '\0'};
+    char name1[16] = {'J', 'o', 'h', 'n'};
 
     // Method 2: Initializing using C-string notation.
     // The compiler automatically adds the null terminator for us.

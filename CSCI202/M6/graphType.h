@@ -1,6 +1,8 @@
+// FILE: graphType.h
+// CLASS PROVIDED: graphType (a class for representing a graph)
 #ifndef H_graph
 #define H_graph
-  
+
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -11,7 +13,7 @@
 
 using namespace std;
 
-class graphType  
+class graphType
 {
 public:
     bool isEmpty() const;
@@ -29,9 +31,9 @@ public:
     ~graphType();
 
 protected:
-    int maxSize;    
-    int gSize;      
-    unorderedLinkedList<int> *graph; 
+    int maxSize;
+    int gSize;
+    unorderedLinkedList<int> *graph;
 
 private:
     void dft(int v, bool visited[]);
@@ -137,7 +139,7 @@ void graphType::printGraph() const
 
 void graphType::depthFirstTraversal()
 {
-    bool *visited; 
+    bool *visited;
     visited = new bool[gSize];
 
     for (int index = 0; index < gSize; index++)
@@ -147,7 +149,7 @@ void graphType::depthFirstTraversal()
         if (!visited[index])
             dft(index, visited);
 
-    delete [] visited;
+    delete[] visited;
 }
 
 void graphType::dft(int v, bool visited[])
@@ -175,7 +177,7 @@ void graphType::dftAtVertex(int vertex)
 
     dft(vertex, visited);
 
-    delete [] visited;
+    delete[] visited;
 }
 
 void graphType::breadthFirstTraversal()
@@ -214,8 +216,8 @@ void graphType::breadthFirstTraversal()
                 }
             }
         }
-		
-    delete [] visited;
+
+    delete[] visited;
 }
 
 graphType::graphType(int size)
@@ -228,7 +230,7 @@ graphType::graphType(int size)
 graphType::~graphType()
 {
     clearGraph();
-    delete [] graph;
+    delete[] graph;
 }
 
 #endif

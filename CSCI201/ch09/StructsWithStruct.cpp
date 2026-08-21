@@ -87,6 +87,7 @@ int main()
     companyEmployees[empCount].contact.email = "alice.smith@corp.com";
     companyEmployees[empCount].deptID = "IT";
     companyEmployees[empCount].salary = 85000.00;
+
     empCount++; // Count is now 1
 
     // --- Record 2: Second Employee ---
@@ -112,6 +113,7 @@ int main()
     companyEmployees[empCount].contact.email = "bob.jones@corp.com";
     companyEmployees[empCount].deptID = "HR";
     companyEmployees[empCount].salary = 62000.00;
+
     empCount++; // Count is now 2
 
     // --- Record 3: Third Employee ---

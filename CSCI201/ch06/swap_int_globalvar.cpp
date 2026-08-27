@@ -1,3 +1,6 @@
+// compile: g++ swap_int_globalvar.cpp -o swap_int_globalvar.exe
+// run: ./swap_int_globalvar.exe
+
 #include <iostream>
 using namespace std;
 
@@ -5,17 +8,19 @@ using namespace std;
 int a = 10, b = 20;
 
 // Swap function (Modified to use global variables directly)
-void mySwap() {
+void mySwap()
+{
     int c = a;
     a = b;
     b = c;
 }
 
-int main(){
+int main()
+{
     cout << "Before swap: a = " << a << ", b = " << b << endl;
-    
+
     mySwap(); // No arguments needed anymore
-    
+
     cout << "After swap:  a = " << a << ", b = " << b << endl;
     return 0;
 }

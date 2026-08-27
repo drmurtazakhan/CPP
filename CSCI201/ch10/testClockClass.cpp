@@ -10,68 +10,72 @@ using namespace std;
 
 int main()
 {
-    clockType myClock;
-    clockType yourClock;
+     clockType myClock;
+     clockType yourClock;
 
-    int hours;
-    int minutes;
-    int seconds;
+     int hours;
+     int minutes;
+     int seconds;
 
-    // Set the time of myClock
-    myClock.setTime(5, 4, 30); // Line 1
+     // Set the time of myClock
+     myClock.setTime(5, 4, 30); // Line 1
 
-    cout << "Line 2: myClock: "; // Line 2
-    myClock.printTime();         // print the time of myClock    Line 3
-    cout << endl;                // Line 4
+     cout << "myClock: ";
+     myClock.printTime();
+     cout << endl;
 
-    cout << "Line 5: yourClock: "; // Line 5
-    yourClock.printTime();         // print the time of yourClock Line 6
-    cout << endl;                  // Line 7
+     cout << "yourClock: ";
+     yourClock.printTime(); // print the time of yourClock
+     cout << endl;
 
-    // Set the time of yourClock
-    yourClock.setTime(5, 45, 16); // Line 8
+     // Set the time of yourClock
+     yourClock.setTime(5, 45, 16);
 
-    cout << "Line 9: After setting, yourClock: "; // Line 9
-    yourClock.printTime();                        // print the time of yourClock Line 10
-    cout << endl;                                 // Line 11
+     cout << "After setting, yourClock: ";
+     yourClock.printTime(); // print the time of yourClock
+     cout << endl;
 
-    // Compare myClock and yourClock
-    if (myClock.equalTime(yourClock)) // Line 12
-        cout << "Line 13: Both times are equal."
-             << endl; // Line 13
-    else              // Line 14
-        cout << "Line 15: The two times are not equal."
-             << endl; // Line 15
+     // Compare myClock and yourClock
+     if (myClock.equalTime(yourClock))
+          cout << "Both times are equal."
+               << endl;
+     else
+          cout << "The two times are not equal."
+               << endl;
 
-    cout << "Line 16: Enter the hours, minutes, and "
-         << "seconds e.g., 7 35 45: ";  // Line 16
-    cin >> hours >> minutes >> seconds; // Line 17
-    cout << endl;                       // Line 18
+     cout << "Line 16: Enter the hours, minutes, and "
+          << "seconds e.g., 7 35 45: ";
+     cin >> hours >> minutes >> seconds;
+     cout << endl;
 
-    // Set the time of myClock using the value of the
-    // variables hours, minutes, and seconds
-    myClock.setTime(hours, minutes, seconds); // Line 19
+     // Set the time of myClock using the value of the
+     // variables hours, minutes, and seconds
+     myClock.setTime(hours, minutes, seconds);
 
-    cout << "Line 20: New myClock: "; // Line 20
-    myClock.printTime();              // print the time of myClock   Line 21
-    cout << endl;                     // Line 22
+     cout << "Line 20: New myClock: ";
+     myClock.printTime(); // print the time of myClock
+     cout << endl;
 
-    // Increment the time of myClock by one second
-    myClock.incrementSeconds(); // Line 23
+     // Increment the time of myClock by one second
+     myClock.incrementSeconds();
 
-    cout << "Line 24: After incrementing myClock by "
-         << "one second, myClock: "; // Line 24
-    myClock.printTime();             // print the time of myClock   Line 25
-    cout << endl;                    // Line 26
+     cout << "Line 24: After incrementing myClock by "
+          << "one second, myClock: ";
+     myClock.printTime(); // print the time of myClock
+     cout << endl;
 
-    // Retrieve the hours, minutes, and seconds of the
-    // object myClock
-    myClock.getTime(hours, minutes, seconds); // Line 27
+     // Retrieve the hours, minutes, and seconds of the
+     // object myClock
+     myClock.getTime(hours, minutes, seconds);
 
-    // Output the value of hours, minutes, and seconds
-    cout << "Line 28: hours = " << hours
-         << ", minutes = " << minutes
-         << ", seconds = " << seconds << endl; // Line 28
+     // Output the value of hours, minutes, and seconds
+     cout << "hours = " << hours
+          << ", minutes = " << minutes
+          << ", seconds = " << seconds << endl;
 
-    return 0;
+     clockType ourClock(23, 59, 59);
+     cout << "ourClock: ";
+     ourClock.printTime();
+
+     return 0;
 } // end main

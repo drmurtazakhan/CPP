@@ -4,6 +4,7 @@
 // This program demonstrates how to use an array of structs to store student records with multiple test scores and calculate their grades
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -86,8 +87,8 @@ void calculateGrades(StudentType students[], int size)
 // Function to print the comprehensive data report
 void printStudents(const StudentType students[], int size)
 {
-    cout << "ID\t\tName\t\t\tTest Scores\t\tGrade" << endl;
-    cout << "---------------------------------------------------------------------" << endl;
+    cout << "ID\t\tName\t\t\tTest Scores\t\t\tGrade" << endl;
+    cout << "-----------------------------------------------------------------------------" << endl;
 
     for (int i = 0; i < size; i++)
     {
@@ -99,6 +100,7 @@ void printStudents(const StudentType students[], int size)
         cout << "[";
         for (int j = 0; j < NUM_SCORES; j++)
         {
+            cout << fixed << setprecision(2);
             cout << students[i].scores[j];
             if (j < NUM_SCORES - 1)
             {

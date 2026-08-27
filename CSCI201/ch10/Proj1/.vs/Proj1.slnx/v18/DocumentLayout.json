@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "J:\\CPP\\CSCI201\\ch10\\Proj1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CF8DE0BF-A445-4B9E-B7B6-1FBE40110B1A}|Proj1.vcxproj|J:\\CPP\\CSCI201\\ch10\\testStudentWay1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "testStudentWay1.cpp",
+              "DocumentMoniker": "J:\\CPP\\CSCI201\\ch10\\testStudentWay1.cpp",
+              "RelativeDocumentMoniker": "..\\testStudentWay1.cpp",
+              "ToolTip": "J:\\CPP\\CSCI201\\ch10\\testStudentWay1.cpp",
+              "RelativeToolTip": "..\\testStudentWay1.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-08-27T19:24:35.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

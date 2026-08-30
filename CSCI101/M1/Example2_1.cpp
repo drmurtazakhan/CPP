@@ -19,7 +19,7 @@ int main()
 
     cout << "Program to compute and output the perimeter and " << "area of a rectangle." << endl;
 
-    length = 6.0;
+    length = 16.0;
     width = 4.0;
     perimeter = 2 * (length + width);
     area = length * width;

@@ -1,43 +1,54 @@
+// compile: g++ Aggregation_Dept_Emp.cpp -o Aggregation_Dept_Emp.exe
+// run: ./Aggregation_Dept_Emp.exe
 #include <iostream>
 #include <string>
 using namespace std;
 
-class Department {
+class Department
+{
     string deptName;
     string location;
+
 public:
     Department(string name, string loc) : deptName(name), location(loc) {}
-    
+
     string getName() { return deptName; }
     string getLocation() { return location; }
 };
 
-class Employee {
+class Employee
+{
     string name;
     // AGGREGATION: Pointer to a shared Department object
-    Department* dept; 
+    Department *dept;
 
 public:
     // Constructor: Employee starts with a department
-    Employee(string n, Department* d) : name(n), dept(d) {}
+    Employee(string n, Department *d) : name(n), dept(d) {}
 
     // FLEXIBILITY: Ability to change departments (impossible with references)
-    void setDept(Department* newDept) {
+    void setDept(Department *newDept)
+    {
         dept = newDept;
     }
 
-    void display() {
+    void display()
+    {
         cout << "Employee: " << name << " | ";
-        if (dept) {
-            cout << "Dept: " << dept->getName() 
+        if (dept)
+        {
+            cout << "Dept: " << dept->getName()
                  << " (" << dept->getLocation() << ")" << endl;
-        } else {
+        }
+        else
+        {
             cout << "Unassigned" << endl;
         }
     }
 };
 
-int main() {
+int main()
+{
     // 1. Create Departments (Only 2 objects in memory)
     Department sales("Sales", "Floor 1");
     Department tech("Technology", "Floor 5");

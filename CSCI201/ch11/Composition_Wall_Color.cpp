@@ -1,42 +1,49 @@
+// compile: g++ Composition_Wall_Color.cpp -o Composition_Wall_Color.exe
+// run: ./Composition_Wall_Color.exe
 #include <iostream>
 #include <string>
 using namespace std;
 
-class Color {
+class Color
+{
     string name;
+
 public:
     Color(string n) : name(n) {}
     string getName() { return name; }
 };
 
-class Wall {
+class Wall
+{
 private:
     // Simple data types
     int height;
     int width;
-    
+
     // Complex object (Composition)
-    Color wallColor; 
+    Color wallColor;
 
 public:
-    
-    Wall(int h, int w, string c) : height(h), width(w), wallColor(c) {
+    Wall(int h, int w, string c) : height(h), width(w), wallColor(c)
+    {
         // The initializer list above handles everything!
     }
 
-    void displayDetails() {
+    void displayDetails()
+    {
         cout << "Wall Dimensions: " << width << "ft wide x " << height << "ft high." << endl;
         cout << "Wall Color: " << wallColor.getName() << endl;
         cout << "Total Surface Area: " << (width * height) << " sq ft." << endl;
     }
 };
 
-int main() {
+int main()
+{
     // Now we pass three arguments: height, width, and color
     {
-    Wall gardenWall(10, 25, "Seashell White");
+        Wall gardenWall(10, 25, "Seashell White");
 
-    gardenWall.displayDetails();
+        gardenWall.displayDetails();
     }
 
     return 0;

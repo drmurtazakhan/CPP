@@ -10,7 +10,7 @@ int main()
 {
     char ch;
 
-    cout << "Enter AB: ";
+    cout << "Input AB ";
     cin >> ch;
 
     cout << "The value stored in ch is: " << ch << endl;

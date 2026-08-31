@@ -1,44 +1,54 @@
+// compile: g++ Multiple_Inheritance.cpp -o Multiple_Inheritance.exe
+// run: ./Multiple_Inheritance.exe
 #include <iostream>
 using namespace std;
 
 // Base class 1: Shape (No parameters)
-class Shape {
+class Shape
+{
 public:
-    Shape() {
+    Shape()
+    {
         cout << "Shape base initialized." << endl;
     }
 };
 
 // Base class 2: PaintCost
-class PaintCost {
+class PaintCost
+{
 public:
     // No constructor needed here, just a utility method
-    int getCost(int area) {
+    int getCost(int area)
+    {
         return area * 70;
     }
 };
 
 // Derived class using Multiple Inheritance
 // It inherits from BOTH Shape and PaintCost
-class Rectangle : public Shape, public PaintCost {
+class Rectangle : public Shape, public PaintCost
+{
 protected:
     int width, height;
 
 public:
     // Rectangle Constructor: Initializes width and height
     // It also calls the Shape constructor automatically
-    Rectangle(int w, int h) : Shape() {
+    Rectangle(int w, int h) : Shape()
+    {
         width = w;
         height = h;
         cout << "Rectangle initialized with dimensions." << endl;
     }
 
-    int getArea() {
+    int getArea()
+    {
         return width * height;
     }
 };
 
-int main() {
+int main()
+{
     // We create the object in one line using the constructor
     Rectangle rect(5, 7);
 

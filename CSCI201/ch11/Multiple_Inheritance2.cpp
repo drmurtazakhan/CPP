@@ -1,13 +1,17 @@
+// compile: g++ Multiple_Inheritance2.cpp -o Multiple_Inheritance2.exe
+// run: ./Multiple_Inheritance2.exe
 #include <iostream>
 using namespace std;
 
 // Base class 1: Shape (Now holds the data and setters)
-class Shape {
+class Shape
+{
 protected:
     int width, height; // Moved here so setters can access them
 
 public:
-    Shape() {
+    Shape()
+    {
         cout << "Shape base initialized." << endl;
     }
 
@@ -17,29 +21,35 @@ public:
 };
 
 // Base class 2: PaintCost
-class PaintCost {
+class PaintCost
+{
 public:
-    int getCost(int area) {
+    int getCost(int area)
+    {
         return area * 70;
     }
 };
 
 // Derived class inherits from BOTH Shape and PaintCost
-class Rectangle : public Shape, public PaintCost {
+class Rectangle : public Shape, public PaintCost
+{
 public:
     // Rectangle Constructor
-    Rectangle(int w, int h) {
+    Rectangle(int w, int h)
+    {
         width = w;
         height = h;
         cout << "Rectangle initialized with dimensions." << endl;
     }
 
-    int getArea() {
+    int getArea()
+    {
         return width * height;
     }
 };
 
-int main() {
+int main()
+{
     // 1. Create the object
     Rectangle rect(5, 7);
     cout << "Initial area: " << rect.getArea() << endl;

@@ -1,40 +1,50 @@
+// compile: g++ Inheritance_Shape_Rect_Sqr.cpp -o Inheritance_Shape_Rect_Sqr.exe
+// run: ./Inheritance_Shape_Rect_Sqr.exe
 #include <iostream>
 using namespace std;
 
-class Shape {
+class Shape
+{
 public:
-    Shape() {
+    Shape()
+    {
         cout << "Shape created." << endl;
     }
 };
 
-class Rectangle : public Shape {
+class Rectangle : public Shape
+{
 protected:
     int width, height;
 
 public:
     // Rectangle Constructor: Takes two parameters
-    Rectangle(int w, int h) : Shape() {
+    Rectangle(int w, int h) : Shape()
+    {
         width = w;
         height = h;
         cout << "Rectangle initialized." << endl;
     }
 
-    int getArea() {
+    int getArea()
+    {
         return width * height;
     }
 };
 
-class Square : public Rectangle {
+class Square : public Rectangle
+{
 public:
     // Square Constructor: Takes ONE parameter
     // It passes that 's' twice to the Rectangle constructor
-    Square(int s) : Rectangle(s, s) {
+    Square(int s) : Rectangle(s, s)
+    {
         cout << "Square initialized." << endl;
     }
 };
 
-int main() {
+int main()
+{
     // Everything happens in one line!
     Rectangle myRect(5, 10);
     Square mySquare(6);

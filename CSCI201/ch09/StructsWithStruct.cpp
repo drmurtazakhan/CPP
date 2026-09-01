@@ -166,6 +166,7 @@ void printEmployeeRecords(const employeeType list[], int size)
         {
             cout << ", " << list[i].address.address2;
         }
+
         cout << ", " << list[i].address.city << ", "
              << list[i].address.state << " " << list[i].address.zip << endl;
 

@@ -1,36 +1,42 @@
+
 #include <iostream>
 using namespace std;
 
-class Shape {
+class Shape
+{
 public:
-    Shape() {
+    Shape()
+    {
         cout << "Shape created." << endl;
     }
 };
 
-class Rectangle : public Shape {
+class Rectangle : public Shape
+{
 protected:
     int width, height;
 
 public:
     // Rectangle Constructor: Takes two parameters
-    Rectangle(int w, int h) : Shape() {
+    Rectangle(int w, int h) : Shape()
+    {
         width = w;
         height = h;
         cout << "Rectangle initialized." << endl;
     }
 
-    int getArea() {
+    int getArea()
+    {
         return width * height;
     }
 };
 
-
-int main() {
+int main()
+{
     // Everything happens in one line!
     Rectangle myRect(5, 10);
 
-    cout << "Rectangle Area: " << myRect.getArea() << endl;    
+    cout << "Rectangle Area: " << myRect.getArea() << endl;
 
     return 0;
 }

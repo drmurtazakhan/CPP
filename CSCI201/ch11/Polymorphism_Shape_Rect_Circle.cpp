@@ -18,6 +18,7 @@ class Rectangle : public Shape
     int w, h;
 
 public:
+    // constructor using a member initializer list:
     Rectangle(int width, int height) : w(width), h(height) {}
 
     // Calculation only: No printing here

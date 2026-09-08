@@ -42,7 +42,7 @@ public:
         }
         else
         {
-            cout << "Unassigned" << endl;
+            cout << "Dept: Unassigned" << endl;
         }
     }
 };

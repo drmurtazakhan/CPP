@@ -41,5 +41,5 @@ double calculateTax(double price)
 {
     // TODO: Write actual tax calculation logic based on state laws later
     cout << "[STUB WARNING: calculateTax() is a placeholder returning a fixed $5.0 tax]" << endl;
-    return 5.0;
+    return 35.0;
 }

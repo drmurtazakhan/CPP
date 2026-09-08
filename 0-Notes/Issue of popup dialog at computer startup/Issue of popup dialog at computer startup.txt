@@ -1,0 +1,3 @@
+When I start my Windows notebook computer a popup dialog appears that ask to open it in (shows me the list of program). If I chooses Notepad, it shows the script. I have both VS Code and Visual Studio Community Edition installed. Usually this happen when I open a file in Visual Studio Community Edition.   
+
+Script file is: Script_popup.txt

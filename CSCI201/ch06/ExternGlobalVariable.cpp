@@ -1,6 +1,7 @@
 // ExternGlobalVariable.cpp
 // compile: g++ ExternGlobalVariable.cpp -o ExternGlobalVariable.exe
 // run:     ./ExternGlobalVariable.exe
+
 #include <iostream>
 using namespace std;
 

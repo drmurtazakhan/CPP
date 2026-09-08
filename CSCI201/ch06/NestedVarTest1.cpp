@@ -1,21 +1,24 @@
+// compile: g++ NestedVarTest1.cpp -o NestedVarTest1.exe
+// run: ./NestedVarTest1.exe
 #include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
     // Outer Block Variable
     int a = 100;
     cout << "Outer variable, a =  " << a << endl;
 
     { // START OF NESTED BLOCK
         // This variable is declared inside the block
-        int b = 500; 
-        
+        int b = 500;
+
         // accessible from point of declaration to end of block
         cout << "Inside nested block, b = " << b << endl;
-        
+
         // The inner block CAN see the outer variable
         cout << "Inside nested block, a is still: " << a << endl;
-        
+
     } // END OF NESTED BLOCK
 
     // Error: b is no longer accessible here

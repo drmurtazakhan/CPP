@@ -1,5 +1,5 @@
-// compile: g++ -std=c++17 Fig12_6.cpp -o Fig12_6.exe
-// run: ./Fig12_6.exe
+// compile: g++ -std=c++17 Fig12_16.cpp -o Fig12_16.exe
+// run: ./Fig12_16.exe
 
 #include <iostream>
 #include <string>

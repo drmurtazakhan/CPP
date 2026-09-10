@@ -57,11 +57,13 @@ int main()
     Employee emp1("Alice", &sales);
     Employee emp2("Bob", &tech);
     Employee emp3("Charlie", &tech); // Shared: Bob and Charlie point to the same object
+    Employee emp4("David", nullptr); // Unassigned department
 
     cout << "--- Initial Assignment ---" << endl;
     emp1.display();
     emp2.display();
     emp3.display();
+    emp4.display();
 
     // 3. Changing Department (Transferring Bob to Sales)
     cout << "\n--- After Bob's Transfer ---" << endl;

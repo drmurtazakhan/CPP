@@ -1,4 +1,5 @@
-
+// compile: g++ Inheritance_Shape_Rect.cpp -o Inheritance_Shape_Rect.exe
+// run: ./Inheritance_Shape_Rect.exe
 #include <iostream>
 using namespace std;
 

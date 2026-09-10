@@ -1,7 +1,11 @@
+// compile: g++ PrivateAddressLeakDemo.cpp -o PrivateAddressLeakDemo.exe
+// run: ./PrivateAddressLeakDemo.exe
+
 #include <iostream>
 using namespace std;
 
-class BankAccount {
+class BankAccount
+{
 private:
     int balance; // This should be protected!
 
@@ -9,24 +13,27 @@ public:
     BankAccount(int b) : balance(b) {}
 
     // DANGEROUS: Returning the address of a private member
-    int* getBalanceAddress() {
-        return &balance; 
+    int *getBalanceAddress()
+    {
+        return &balance;
     }
 
-    void showBalance() {
+    void showBalance()
+    {
         cout << "Current Balance: $" << balance << endl;
     }
 };
 
-int main() {
+int main()
+{
     BankAccount myAccount(1000);
     myAccount.showBalance();
 
     // 1. The "Leak": We get the address of the private variable
-    int* hackerPointer = myAccount.getBalanceAddress();
+    int *hackerPointer = myAccount.getBalanceAddress();
 
     // 2. The "Attack": We use the address to change private data from outside
-    *hackerPointer = 999999; 
+    *hackerPointer = 999999;
 
     cout << "\n--- After unauthorized access ---" << endl;
     myAccount.showBalance(); // The balance changed without using a class function!

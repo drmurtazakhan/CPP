@@ -4,51 +4,70 @@
 #include <iostream>
 using namespace std;
 
-class Shape {
+class Shape
+{
 public:
-    virtual int getArea() {
-        return 0; 
+    virtual int getArea()
+    {
+        return 0;
+    }
+
+    // Virtual destructor - ALWAYS in the Base class
+    virtual ~Shape()
+    {
+        cout << "Shape Destructor Executing..." << endl;
     }
 };
 
-class Rectangle : public Shape {
+class Rectangle : public Shape
+{
 private:
     int width, height;
+
 public:
-    Rectangle(int w, int h) {
-        width = w;
-        height = h;
+    Rectangle(int w, int h) : width(w), height(h) {}
+
+    // Destructor - Automatically becomes virtual because the parent's is virtual
+    ~Rectangle()
+    {
+        cout << "Rectangle Destructor Executing..." << endl;
     }
 
-    int getArea() override {
+    int getArea() override
+    {
         return width * height;
     }
 };
 
 // The Formal Parameter (Base Type Reference)
-void printArea(Shape &s) {
+void printArea(Shape &s)
+{
     cout << "Area result: " << s.getArea() << endl;
 }
 
-int main() {
+int main()
+{
+    // Shape s; // ok shape is not abstract
+
     Rectangle myRect(10, 5); // Width 10, Height 5
 
     // Concept 1: Passing Derived to Base Parameter
     cout << "--- Concept 1: Passing Derived to Base Parameter ---" << endl;
-    printArea(myRect); 
+    printArea(myRect);
 
     // Concept 2: Copying Derived into Base Object
     cout << "\n--- Concept 2: Copying Derived into Base Object ---" << endl;
     Shape genericShape = myRect; // Slicing happens here!
-    
+
     // Now passing the sliced copy to the same function
-    printArea(genericShape); 
+    printArea(genericShape);
 
     cout << "\nAddress of myRect:       " << &myRect << endl;
     cout << "Address of genericShape: " << &genericShape << endl;
 
     cout << "\nSize of myRect: " << sizeof(myRect) << " bytes" << endl;
     cout << "Size of genericShape: " << sizeof(genericShape) << " bytes" << endl;
+    cout << endl;
 
     return 0;
 }

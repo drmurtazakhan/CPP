@@ -1,9 +1,13 @@
+// compile with: g++ -std=c++17 ptr_stu_struct.cpp -o ptr_stu_struct.exe
+// run with: ./ptr_stu_struct.exe
+
 #include <iostream>
 #include <cstring> // Needed for strcpy
 using namespace std;
 
 // Define the structure based on your image
-struct studentType {
+struct studentType
+{
     char name[26];
     double gpa;
     int sID;
@@ -11,7 +15,8 @@ struct studentType {
 };
 
 // Function to print the student details using a pointer
-void printStudent(studentType* ptr) {
+void printStudent(studentType *ptr)
+{
     cout << "--- Student Record ---" << endl;
     // Using the arrow operator (->) to access member variables
     cout << "Name:  " << ptr->name << endl;
@@ -20,12 +25,13 @@ void printStudent(studentType* ptr) {
     cout << "Grade: " << ptr->grade << endl;
 }
 
-int main() {
+int main()
+{
     // 1. Create a student object
     studentType student;
 
     // 2. Create a pointer and point it to the student
-    studentType* studentPtr = &student;
+    studentType *studentPtr = &student;
 
     // 3. Assign values using the arrow operator (as shown in your image)
     strcpy(studentPtr->name, "John Smith"); // Copying text into the char array

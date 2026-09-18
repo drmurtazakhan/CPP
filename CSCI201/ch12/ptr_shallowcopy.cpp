@@ -39,7 +39,7 @@ int main()
     cout << "Second array: ";
     printArray(second, 10);
 
-    // Cleanup: Only delete one, because both point to the same thing
+    // Cleanup: Only delete second pointer (both point to the same thing)
     delete[] second;
     // first is now a 'dangling pointer' and should not be used
 

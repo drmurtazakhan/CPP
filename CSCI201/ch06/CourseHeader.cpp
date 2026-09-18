@@ -8,9 +8,8 @@ int main()
 {
     // 2. Function Call (Parentheses are empty)
     printHeader();
-    `
 
-        cout
+    cout
         << "\nProgram execution completed." << endl;
 
     return 0;

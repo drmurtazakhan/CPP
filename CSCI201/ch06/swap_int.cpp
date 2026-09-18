@@ -8,16 +8,16 @@ using namespace std;
 // It swaps the actual variables.
 void mySwap(int &a, int &b)
 {
-    int c = a;
+    int c = a; // temporary variable to hold the value of a
     a = b;
     b = c;
 }
 
 int main()
 {
-    int a = 10, b = 20;
-    cout << "Before swap: a = " << a << ", b = " << b << endl;
-    mySwap(a, b);
-    cout << "After swap:  a = " << a << ", b = " << b << endl;
+    int x = 10, y = 20;
+    cout << "Before swap: x = " << x << ", y = " << y << endl;
+    mySwap(x, y);
+    cout << "After swap:  x = " << x << ", y = " << y << endl;
     return 0;
 }

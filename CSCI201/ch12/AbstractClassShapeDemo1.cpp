@@ -1,3 +1,6 @@
+// compile: g++ AbstractClassShapeDemo1.cpp -o AbstractClassShapeDemo1.exe
+// run: ./AbstractClassShapeDemo1.exe
+
 #include <iostream>
 using namespace std;
 

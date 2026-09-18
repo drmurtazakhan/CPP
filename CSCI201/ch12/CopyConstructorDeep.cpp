@@ -1,11 +1,6 @@
 // compile: g++ CopyConstructorDeep.cpp -o CopyConstructorDeep.exe
 // run: ./CopyConstructorDeep.exe
 
-// File: ptr_copy_constructor_deep_member.cpp
-// Title: Deep Copy Demonstration with Member Function
-// To compile: g++ ptr_copy_constructor_deep_member.cpp -o ptr_copy_constructor_deep_member.exe
-// To run: ./ptr_copy_constructor_deep_member.exe
-
 #include <iostream>
 #include <string>
 using namespace std;

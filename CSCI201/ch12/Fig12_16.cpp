@@ -15,7 +15,7 @@ public:
         lenP = length;
         p = new int[lenP]; // Allocate dynamic memory
 
-        // Initialize array elements with sample values matching the diagram
+        // Initialize array elements with sample values
         p[0] = 5;
         p[1] = 36;
         p[2] = 24;

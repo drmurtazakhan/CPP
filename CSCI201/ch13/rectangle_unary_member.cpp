@@ -1,8 +1,10 @@
-// File name: rectangle_unary_member.cpp
+// compile: g++ rectangle_unary_member.cpp -o rectangle_unary_member.exe
+// run: ./rectangle_unary_member.exe
 #include <iostream>
 using namespace std;
 
-class rectangleType {
+class rectangleType
+{
 private:
     double length;
     double width;
@@ -14,40 +16,52 @@ public:
     rectangleType operator++();
     rectangleType operator--();
 
-    void print() const {
+    void print() const
+    {
         cout << "[" << length << " x " << width << "]";
     }
 };
 
 // Implementation using the Scope Resolution Operator ::
-rectangleType rectangleType::operator++() {
-    length++; // Increment length
-    width++;  // Increment width    
+rectangleType rectangleType::operator++()
+{
+    length++;     // Increment length
+    width++;      // Increment width
     return *this; // Return the caller object
 }
 
-rectangleType rectangleType::operator--() {
+rectangleType rectangleType::operator--()
+{
     length--; // Decrement length
     width--;  // Decrement width
-    
+
     return *this; // Return the object that was just changed
 }
 
-int main() {
+int main()
+{
     rectangleType rect1(10, 5);
     rectangleType rect2;
 
-    cout << "Initial rect1: "; rect1.print(); cout << endl;
+    cout << "Initial rect1: ";
+    rect1.print();
+    cout << endl;
 
     // Because we return rectangleType, we can assign the result!
-    rect2 = ++rect1; 
+    rect2 = ++rect1;
 
     cout << "After ++ calculation:" << endl;
-    cout << "rect1 is now: "; rect1.print(); cout << endl;
-    cout << "rect2 is now: "; rect2.print(); cout << endl;
+    cout << "rect1 is now: ";
+    rect1.print();
+    cout << endl;
+    cout << "rect2 is now: ";
+    rect2.print();
+    cout << endl;
 
     --rect1;
-    cout << "After -- rect1: "; rect1.print(); cout << endl;
+    cout << "After -- rect1: ";
+    rect1.print();
+    cout << endl;
 
     return 0;
 }

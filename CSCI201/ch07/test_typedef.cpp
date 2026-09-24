@@ -1,4 +1,3 @@
-// File Name: test_typedef.cpp
 // Compile: g++ test_typedef.cpp -o test_typedef.exe
 // Run: ./test_typedef.exe
 // This program demonstrates the use of typedef in C++.
@@ -21,5 +20,5 @@ int main()
 
     cout << "Age: " << age << endl;
 
-        return 0;
+    return 0;
 }

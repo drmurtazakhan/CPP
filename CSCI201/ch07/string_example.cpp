@@ -1,4 +1,3 @@
-// File Name: string_example.cpp
 // Compile: g++ string_example.cpp -o string_example.exe
 // Run: ./string_example.exe
 

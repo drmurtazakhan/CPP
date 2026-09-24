@@ -1,4 +1,3 @@
-// File Name: enum_courses.cpp
 // Compile: g++ enum_courses.cpp -o enum_courses.exe
 // Run: ./enum_courses.exe
 // This program demonstrates the use of enum with a switch statement.

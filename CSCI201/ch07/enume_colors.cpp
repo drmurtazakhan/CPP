@@ -1,4 +1,3 @@
-// File Name: enume_colors.cpp
 // Compile: g++ enume_colors.cpp -o enume_colors.exe
 // Run: ./enume_colors.exe
 

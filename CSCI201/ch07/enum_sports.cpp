@@ -45,15 +45,6 @@ int main()
     // Start from BASKETBALL and continue until SOCCER.
     // static_cast<sports>(mySport + 1) converts the integer value
     // back to the enumeration type.
-    //
-    // Without static_cast, C++ does not automatically convert an
-    // integer value to an enum type.
-
-    for (int i = 0; i <= 10; i++)
-    {
-        //
-    }
-
     for (mySport = BASKETBALL;
          mySport <= SOCCER;
          mySport = static_cast<sports>(mySport + 1))

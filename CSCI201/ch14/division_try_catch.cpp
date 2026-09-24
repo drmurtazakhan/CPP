@@ -1,9 +1,12 @@
-//division_try_catch.cpp
+// compile: g++ division_try_catch.cpp -o division_try_catch.exe
+// run: ./division_try_catch.exe
+
 #include <iostream>
 #include <string>
 using namespace std;
 
-int main() {
+int main()
+{
     double dividend, divisor, quotient;
 
     cout << "Enter the dividend: ";
@@ -11,9 +14,11 @@ int main() {
     cout << "Enter the divisor: ";
     cin >> divisor;
 
-    try {
+    try
+    {
         // Step 1: Detect the undesirable situation
-        if (divisor == 0) {
+        if (divisor == 0)
+        {
             // Step 2: Throw an exception (we are throwing a string object)
             throw string("Division by zero error!");
         }
@@ -22,7 +27,8 @@ int main() {
         quotient = dividend / divisor;
         cout << "The quotient is: " << quotient << endl;
     }
-    catch (string message) {
+    catch (string message)
+    {
         // Step 3: Catch the exception and handle it
         cout << "Exception: " << message << endl;
     }

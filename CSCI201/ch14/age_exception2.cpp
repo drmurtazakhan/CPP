@@ -1,5 +1,5 @@
-// compile: g++ age_exception.cpp -o age_exception.exe
-// run: ./age_exception.exe
+// compile: g++ age_exception2.cpp -o age_exception2.exe
+// run: ./age_exception2.exe
 
 #include <iostream>
 #include <string>
@@ -36,8 +36,8 @@ int main()
 
         if (age > 120)
         {
-            // Throwing a generic character array
-            throw false; // This will be caught by the catch(...) block
+            // Explicitly throw std::string
+            throw string("That age seems impossible!");
         }
 
         cout << "Thank you! Your age is registered as: " << age << endl;

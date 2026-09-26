@@ -1,15 +1,20 @@
 // File name: classIllusFriend_demo.cpp
+// compile: cls
+
+// run : ./classIllusFriend_demo.exe
 #include <iostream>
 using namespace std;
 
-class classIllusFriend {
+class classIllusFriend
+{
     // Granting permission to the outside function 'two'
-    friend void two(classIllusFriend &cObj); 
+    friend void two(classIllusFriend &cObj);
 
 public:
     classIllusFriend(int a = 0, int b = 0) : x(a), y(b) {}
 
-    void print() const {
+    void print() const
+    {
         cout << "Current values: x = " << x << ", y = " << y << endl;
     }
 
@@ -19,18 +24,20 @@ private:
 };
 
 // The friend function definition
-void two(classIllusFriend &cObj) {
+void two(classIllusFriend &cObj)
+{
     cObj.x = cObj.x * 2; // Changing x
-    cObj.y = cObj.y * 2; // Changing y      
+    cObj.y = cObj.y * 2; // Changing y
 }
 
-int main() {
+int main()
+{
     // 1. Create the object
     classIllusFriend myObject(5, 7);
 
     // 2. Print initial values
     cout << "Before calling two:" << endl;
-    myObject.print();    
+    myObject.print();
 
     // 3. Call the friend function
     two(myObject);

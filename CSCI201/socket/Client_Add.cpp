@@ -1,10 +1,6 @@
 // Client_Add.cpp
-#include <iostream>
-#include <string>
-#include <winsock2.h> // Windows replacement for sys/socket.h
-#include <ws2tcpip.h>  // Windows replacement for arpa/inet.h
 
-// To compile on Bash Terminal
+// To compile
 // Server: g++ Server_Add.cpp -o Server_Add.exe -lws2_32
 // Client: g++ Client_Add.cpp -o Client_Add.exe -lws2_32
 
@@ -13,20 +9,28 @@
 // 2. Open the new terminal and run the client, you have to input two integers to see the result
 // 3. Start the client: ./Client_Add.exe
 
+#include <iostream>
+#include <string>
+#include <winsock2.h> // Windows replacement for sys/socket.h
+#include <ws2tcpip.h> // Windows replacement for arpa/inet.h
+
 // Link the Windows Socket library
 #pragma comment(lib, "ws2_32.lib")
 
-int main() {
+int main()
+{
     // 1. Initialize Winsock
     WSADATA wsaData;
-    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
+    {
         std::cout << "Winsock initialization failed" << std::endl;
         return 1;
     }
 
     // 2. Create Socket
     SOCKET sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-    if (sock == INVALID_SOCKET) {
+    if (sock == INVALID_SOCKET)
+    {
         std::cout << "Socket creation failed" << std::endl;
         WSACleanup();
         return 1;
@@ -38,7 +42,8 @@ int main() {
     inet_pton(AF_INET, "127.0.0.1", &servAddr.sin_addr);
 
     // 3. Connect to the Server
-    if (connect(sock, (struct sockaddr*)&servAddr, sizeof(servAddr)) == SOCKET_ERROR) {
+    if (connect(sock, (struct sockaddr *)&servAddr, sizeof(servAddr)) == SOCKET_ERROR)
+    {
         std::cout << "Connection Failed" << std::endl;
         closesocket(sock);
         WSACleanup();
@@ -53,10 +58,10 @@ int main() {
     std::cin >> vals[1];
 
     // 5. Send raw data and receive the sum
-    send(sock, (char*)vals, sizeof(vals), 0);
+    send(sock, (char *)vals, sizeof(vals), 0);
 
     int sum = 0;
-    recv(sock, (char*)&sum, sizeof(sum), 0);
+    recv(sock, (char *)&sum, sizeof(sum), 0);
 
     std::cout << "The Server calculated the sum: " << sum << std::endl;
 
@@ -65,4 +70,3 @@ int main() {
     WSACleanup();
     return 0;
 }
-

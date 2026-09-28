@@ -1,32 +1,35 @@
 // Echo_Client.cpp
-#include <iostream>
-#include <string>
-#include <winsock2.h> 
-#include <ws2tcpip.h>  
-
-// To compile on Bash Terminal
+// To compile
 // Server: g++ Echo_Server.cpp -o Echo_Server.exe -lws2_32
 // Client: g++ Echo_Client.cpp -o Echo_Client.exe -lws2_32
 
 // To Run
 // 1. Start the Server first: ./Echo_Server.exe
 // 2. Open a new terminal and run the client
-// 3. Start the client: ./Echo_Client.exe 
+// 3. Start the client: ./Echo_Client.exe
+
+#include <iostream>
+#include <string>
+#include <winsock2.h>
+#include <ws2tcpip.h>
 
 // Link the Windows Socket library
 #pragma comment(lib, "ws2_32.lib")
 
-int main() {
+int main()
+{
     // 1. Initialize Winsock
     WSADATA wsaData;
-    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
+    {
         std::cout << "Winsock initialization failed" << std::endl;
         return 1;
     }
 
     // 2. Create the client socket
     SOCKET sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-    if (sock == INVALID_SOCKET) {
+    if (sock == INVALID_SOCKET)
+    {
         std::cout << "Socket creation failed" << std::endl;
         WSACleanup();
         return 1;
@@ -39,7 +42,8 @@ int main() {
     inet_pton(AF_INET, "127.0.0.1", &servAddr.sin_addr);
 
     // 4. Connect to the Server
-    if (connect(sock, (struct sockaddr*)&servAddr, sizeof(servAddr)) == SOCKET_ERROR) {
+    if (connect(sock, (struct sockaddr *)&servAddr, sizeof(servAddr)) == SOCKET_ERROR)
+    {
         std::cout << "Connection Failed" << std::endl;
         closesocket(sock);
         WSACleanup();
@@ -58,7 +62,8 @@ int main() {
     char buffer[1024] = {0};
     int bytesReceived = recv(sock, buffer, 1024, 0);
 
-    if (bytesReceived > 0) {
+    if (bytesReceived > 0)
+    {
         std::cout << "Server Echoed: " << buffer << std::endl;
     }
 

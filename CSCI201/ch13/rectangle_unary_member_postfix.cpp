@@ -1,5 +1,5 @@
-// compile: g++ rectangle_unary_nonmember.cpp -o rectangle_unary_nonmember.exe
-// run: ./rectangle_unary_nonmember.exe
+// compile: g++ rectangle_unary_member_postfix.cpp -o rectangle_unary_member_postfix.exe
+// run: ./rectangle_unary_member_postfix.exe
 
 // overloading of the postfix increment (++) and decrement (--) operators.
 

@@ -1,4 +1,7 @@
 // File name: array_list_template.cpp
+// compile: g++ array_list_template.cpp -o array_list_template.exe
+// run: ./array_list_template.exe
+
 #include <iostream>
 #include <string>
 using namespace std;

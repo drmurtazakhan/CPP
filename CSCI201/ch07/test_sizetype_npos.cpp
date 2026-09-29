@@ -4,38 +4,47 @@
 #include <iostream>
 #include <string>
 
+// Bring the standard namespace into scope to omit std:: prefixes
+using namespace std;
+
 int main()
 {
-    std::string text = "Hello, welcome to C++ programming!";
+    // Initialize a target string for searching
+    string text = "Hello, welcome to C++ programming!";
 
     // ---------------------------------------------------------
-    // 1. Searching for "welcome"
+    // 1. Successful Search Example ("welcome")
     // ---------------------------------------------------------
-    std::string::size_type pos1 = text.find("welcome");
+    // string::size_type is an unsigned integer type guaranteed to hold
+    // any valid string index or the special constant string::npos.
+    string::size_type pos1 = text.find("welcome");
 
-    // Using the '==' operator and an if-else block
-    if (pos1 == std::string::npos)
+    // string::npos is returned by find() when a substring is NOT present.
+    // Check if the substring was found by comparing pos1 against string::npos.
+    if (pos1 == string::npos)
     {
-        std::cout << "'welcome' was not found in the string.\n";
+        cout << "'welcome' was not found in the string.\n";
     }
     else
     {
-        std::cout << "'welcome' was found at index position: " << pos1 << "\n";
+        // Output the 0-based index where the match begins
+        cout << "'welcome' was found at index position: " << pos1 << "\n";
     }
 
     // ---------------------------------------------------------
-    // 2. Searching for "Java"
+    // 2. Unsuccessful Search Example ("Java")
     // ---------------------------------------------------------
-    std::string::size_type pos2 = text.find("Java");
+    // Perform a search for a substring that does not exist in 'text'
+    string::size_type pos2 = text.find("Java");
 
-    // Using the exact same '==' operator and an if-else block
-    if (pos2 == std::string::npos)
+    // Since "Java" is missing, text.find() evaluates to string::npos
+    if (pos2 == string::npos)
     {
-        std::cout << "'Java' was not found (returned string::npos).\n";
+        cout << "'Java' was not found (returned string::npos).\n";
     }
     else
     {
-        std::cout << "'Java' was found at index position: " << pos2 << "\n";
+        cout << "'Java' was found at index position: " << pos2 << "\n";
     }
 
     return 0;

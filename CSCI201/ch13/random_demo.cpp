@@ -1,19 +1,23 @@
 // File name: random_demo.cpp
+// compile: g++ random_demo.cpp -o random_demo.exe
+// run: ./random_demo.exe
+
 #include <iostream>
 #include <random> // Essential for C++11 random functions
 using namespace std;
 
-int main() {
+int main()
+{
     // 1. Create a "Seed"
     // This uses the computer's hardware to create a starting point
-    random_device rd; 
+    random_device rd;
 
     // 2. The Engine (The "Crank")
     // mt19937 is the most popular engine (Mersenne Twister)
     mt19937 engine(rd());
 
     // 3. The Distributors (The "Shapes")
-    
+
     // This one makes whole numbers (e.g., for a game)
     uniform_int_distribution<int> intDist(1, 100);
 

@@ -1,5 +1,7 @@
 // compile: g++ rectangle_unary_member.cpp -o rectangle_unary_member.exe
 // run: ./rectangle_unary_member.exe
+
+// overloading of the prefix increment (++) and decrement (--) operators.
 #include <iostream>
 using namespace std;
 
@@ -12,7 +14,6 @@ private:
 public:
     rectangleType(double l = 0, double w = 0) : length(l), width(w) {}
 
-    // The textbook style: Returns the updated object itself
     rectangleType operator++();
     rectangleType operator--();
 

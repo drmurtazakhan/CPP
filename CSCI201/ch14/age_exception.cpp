@@ -22,6 +22,7 @@ int main()
         {
             // Clear the error flag so we can use cin again
             cin.clear();
+
             // Skip the bad input sitting in the buffer
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 

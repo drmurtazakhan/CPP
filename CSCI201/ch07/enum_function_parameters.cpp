@@ -39,6 +39,8 @@ int main()
 
     color1 = swapColors(color1, color2);
 
+    // swapColors(color1, color2);
+
     cout << "\nAfter function call:" << endl;
     cout << "color1 = " << color1 << endl;
     cout << "color2 = " << color2 << endl;

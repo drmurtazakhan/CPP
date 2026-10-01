@@ -28,7 +28,7 @@ int main()
     cout << "After append: " << name << endl;
 
     // substr(start, length) returns part of the string.
-    cout << "Substring: " << name.substr(0, 5) << endl;
+    cout << "Substring: " << name.substr(0, 2) << endl;
 
     // find() returns the position of a character or substring.
     cout << "Position of 'S': " << name.find("S") << endl;

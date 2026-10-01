@@ -1,20 +1,27 @@
-// custom_exception_demo.cpp
+// compile: g++ custom_exception_demo.cpp -o custom_exception_demo.exe
+// run: ./custom_exception_demo.exe
+
+// This program demonstrates how to create and use a custom exception class in C++.
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 // 1. Define your own exception class
-class InsufficientFunds {
+class InsufficientFunds
+{
 public:
     // Constructor to store specific details about the error
-    InsufficientFunds(double amount) {
-        message = "Transaction Failed: You tried to withdraw $" + to_string(amount) + 
+    InsufficientFunds(double amount)
+    {
+        message = "Transaction Failed: You tried to withdraw $" + to_string(amount) +
                   " but your balance is too low.";
     }
 
     // The function what() returns the error message
-    string what() const {
+    string what() const
+    {
         return message;
     }
 
@@ -22,7 +29,8 @@ private:
     string message; // Member variable to hold error details
 };
 
-int main() {
+int main()
+{
     double balance = 50.00;
     double withdrawal;
 
@@ -30,8 +38,10 @@ int main() {
     cout << "Enter withdrawal amount: ";
     cin >> withdrawal;
 
-    try {
-        if (withdrawal > balance) {
+    try
+    {
+        if (withdrawal > balance)
+        {
             // 2. Use the throw statement to "signal" the custom exception
             throw InsufficientFunds(withdrawal);
         }
@@ -39,7 +49,8 @@ int main() {
         cout << "Success! New balance: $" << balance << endl;
     }
     // 3. Catch your specific custom class
-    catch (const InsufficientFunds& e) {
+    catch (const InsufficientFunds &e)
+    {
         cout << e.what() << endl;
     }
 

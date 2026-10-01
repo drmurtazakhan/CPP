@@ -26,8 +26,7 @@ int main()
     favoriteColor = GREEN;
 
     // Display the integer value of the enumerator.
-    cout << "The integer value of GREEN is: "
-         << favoriteColor << endl;
+    cout << "The integer value of GREEN is: " << favoriteColor << endl;
 
     // Demonstrate the ordering of enumeration values.
     if (RED < GREEN)

@@ -45,6 +45,13 @@ int main()
     // Start from BASKETBALL and continue until SOCCER.
     // static_cast<sports>(mySport + 1) converts the integer value
     // back to the enumeration type.
+    int i = 0;
+    for (i = 0; i < 4; i = i + 1)
+    {
+
+        cout << "i: " << i << endl;
+    }
+
     for (mySport = BASKETBALL;
          mySport <= SOCCER;
          mySport = static_cast<sports>(mySport + 1))

@@ -1,6 +1,6 @@
 // File name: char_array_init.cpp
 // compile: g++ char_array_init.cpp -o char_array_init.exe
-// run: `
+// run: ./char_array_init.exe
 
 #include <iostream>
 

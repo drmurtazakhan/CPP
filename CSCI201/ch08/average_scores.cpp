@@ -5,6 +5,7 @@
 // Program to find the average test score and output the average
 // test score and all the test scores that are less than
 // the average test score.
+
 #include <iostream>
 #include <iomanip> // Required for output formatting
 

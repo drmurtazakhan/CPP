@@ -1,45 +1,51 @@
 // sprite_move2.cpp
-// compile with: g++ sprite_move2.cpp -o sprite_move2 -lsfml-graphics -lsfml-window -lsfml-system
+// compile: g++ sprite_move2.cpp -o sprite_move2 -lsfml-graphics -lsfml-window -lsfml-system
 // run with: ./sprite_move2
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <ctime>
 #include <iostream>
 
-int main() {
+int main()
+{
     // Window setup
     sf::RenderWindow window(sf::VideoMode({800, 600}), "Meteor Dodge");
     window.setFramerateLimit(60);
-    
+
     // Seed for random meteor positions
     srand(static_cast<unsigned>(time(NULL)));
 
     // 1. Load Your Specific Ship Image
     sf::Texture shipTexture;
-    if (!shipTexture.loadFromFile("playerShip1_blue.png")) {
+    if (!shipTexture.loadFromFile("playerShip1_blue.png"))
+    {
         std::cout << "Error: playerShip1_blue.png not found!" << std::endl;
-        return -1; 
+        return -1;
     }
     sf::Sprite ship(shipTexture);
     ship.setPosition({400, 500});
 
     // 2. Load Your Specific Meteor Image
     sf::Texture meteorTexture;
-    if (!meteorTexture.loadFromFile("meteorBrown_small1.png")) {
+    if (!meteorTexture.loadFromFile("meteorBrown_small1.png"))
+    {
         std::cout << "Error: meteorBrown_small1.png not found!" << std::endl;
         return -1;
     }
 
     std::vector<sf::Sprite> meteors;
     float spawnTimer = 0;
-    
-    // Balance settings
-    float shipSpeed = 6.0f;    // Speed of your ship
-    float meteorSpeed = 2.0f;  // Slower speed for better gameplay
 
-    while (window.isOpen()) {
-        while (const auto event = window.pollEvent()) {
-            if (event->is<sf::Event::Closed>()) {
+    // Balance settings
+    float shipSpeed = 6.0f;   // Speed of your ship
+    float meteorSpeed = 2.0f; // Slower speed for better gameplay
+
+    while (window.isOpen())
+    {
+        while (const auto event = window.pollEvent())
+        {
+            if (event->is<sf::Event::Closed>())
+            {
                 window.close();
             }
         }
@@ -50,7 +56,7 @@ int main() {
             ship.move({-shipSpeed, 0.f});
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && ship.getPosition().x < 700)
             ship.move({shipSpeed, 0.f});
-        
+
         // Up and Down
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) && ship.getPosition().y > 0)
             ship.move({0.f, -shipSpeed});
@@ -59,7 +65,8 @@ int main() {
 
         // 4. Slower Spawning Logic
         spawnTimer += 1.0f;
-        if (spawnTimer >= 60.0f) { // Spawns roughly every 0.75 seconds
+        if (spawnTimer >= 45.0f)
+        { // Spawns roughly every 0.75 seconds
             sf::Sprite meteor(meteorTexture);
             meteor.setPosition({(float)(rand() % 750), -50.f});
             meteors.push_back(meteor);
@@ -67,19 +74,25 @@ int main() {
         }
 
         // 5. Update Meteors and check for Game Over
-        for (size_t i = 0; i < meteors.size(); ) {
+        for (size_t i = 0; i < meteors.size();)
+        {
             meteors[i].move({0.f, meteorSpeed});
 
             // Collision Check
-            if (meteors[i].getGlobalBounds().findIntersection(ship.getGlobalBounds())) {
+            if (meteors[i].getGlobalBounds().findIntersection(ship.getGlobalBounds()))
+            {
                 std::cout << "BOOM! Game Over." << std::endl;
                 window.close();
             }
 
             // Remove if it leaves the screen
-            if (meteors[i].getPosition().y > 600) {
+            if (meteors[i].getPosition().y > 600)
+            {
+                // deletes an element from a std::vector at index i
                 meteors.erase(meteors.begin() + i);
-            } else {
+            }
+            else
+            {
                 i++;
             }
         }
@@ -87,7 +100,10 @@ int main() {
         // Drawing
         window.clear();
         window.draw(ship);
-        for (const auto& m : meteors) {
+        for (const auto &m : meteors)
+        {
+            // m is indeed an alias for each meteor in the vector,
+            // so we can use it to draw each meteor
             window.draw(m);
         }
         window.display();

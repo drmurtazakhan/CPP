@@ -1,27 +1,22 @@
-// Server_Add.cpp
+// To compile
+// Server: g++ Add_Server.cpp -o Add_Server.exe -lws2_32
+// Client: g++ Add_Client.cpp -o Add_Client.exe -lws2_32
 
-// Define target Windows version (0x0600 = Windows Vista or later).
-// Keeps Windows target standard aligned across all course sample files.
-#define _WIN32_WINNT 0x0600
-
-// How to Compile:
-// Server: g++ Server_Add.cpp -o Server_Add.exe -lws2_32
-// Client: g++ Client_Add.cpp -o Client_Add.exe -lws2_32
-
-// How to Run:
-// 1. Start the Server first: ./Server_Add.exe
-// 2. Open a second terminal and run the Client: ./Client_Add.exe
+// To Run
+// 1. Start the Server first: ./Add_Server.exe
+// 2. Open the new terminal and run the client, you have to input two integers to see the result
+// 3. Start the client: ./Add_Client.exe
 
 #include <iostream>
 #include <winsock2.h> // Required for Windows networking
 #include <ws2tcpip.h> // Required for modern IP functions
 
-// Tell the compiler to link the Windows Socket library
+// This tells the compiler to link the Winsock library file
 #pragma comment(lib, "ws2_32.lib")
 
 int main()
 {
-    // 1. Initialize Winsock
+    // 1. Initialize Winsock (Required for Windows)
     WSADATA wsaData;
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
     {
@@ -41,7 +36,7 @@ int main()
     // 3. Bind to Address and Port 8080
     sockaddr_in servAddr;
     servAddr.sin_family = AF_INET;
-    servAddr.sin_addr.s_addr = INADDR_ANY; // Listen on all network interfaces
+    servAddr.sin_addr.s_addr = INADDR_ANY; // Listen on all network cards
     servAddr.sin_port = htons(8080);
 
     if (bind(servSock, (struct sockaddr *)&servAddr, sizeof(servAddr)) == SOCKET_ERROR)
@@ -52,7 +47,7 @@ int main()
         return -1;
     }
 
-    // 4. Start Listening for Incoming Connections
+    // 4. Start Listening
     if (listen(servSock, 5) == SOCKET_ERROR)
     {
         std::cerr << "Listen failed" << std::endl;
@@ -65,7 +60,7 @@ int main()
 
     while (true)
     {
-        // 5. Accept a connection from a client
+        // 5. Accept a connection
         SOCKET clntSock = accept(servSock, nullptr, nullptr);
         if (clntSock == INVALID_SOCKET)
             continue;
@@ -81,15 +76,13 @@ int main()
             std::cout << "Received: " << numbers[0] << " and " << numbers[1] << std::endl;
             std::cout << "Sending back Sum: " << sum << std::endl;
 
-            // 8. Send the result back to the client
+            // 8. Send the result back and close this connection
             send(clntSock, (char *)&sum, sizeof(sum), 0);
         }
-
-        // 9. Close client connection socket
         closesocket(clntSock);
     }
 
-    // 10. Cleanup Listening Socket & Winsock
+    // 9. Final Cleanup
     closesocket(servSock);
     WSACleanup();
     return 0;

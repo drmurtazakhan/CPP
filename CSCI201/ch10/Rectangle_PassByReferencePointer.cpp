@@ -32,6 +32,8 @@ void update(Rectangle *&r)
 
     cout << "Inside update - After assigning new object: "
          << r->width << ", " << r->height << endl;
+
+    //    Important: The original object becomes unreachable after the pointer is redirected, causing a memory leak in this example. For production code, you should preserve and delete the original object before losing its pointer, or use smart pointers
 }
 
 int main()

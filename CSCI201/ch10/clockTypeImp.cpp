@@ -1,7 +1,6 @@
 // Implementation File for the class clockType
 //  clockTypeImp.cpp
 //  compile: g++ clockTypeImp.cpp -o clockTypeImp.exe
-//  run: clockTypeImp.exe
 
 #include <iostream>
 #include "clockType.h"

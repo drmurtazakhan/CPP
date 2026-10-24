@@ -38,7 +38,7 @@ int main()
 
     // Balance settings
     float shipSpeed = 6.0f;   // Speed of your ship
-    float meteorSpeed = 2.0f; // Slower speed for better gameplay
+    float meteorSpeed = 1.0f; // Slower speed for better gameplay
 
     while (window.isOpen())
     {
@@ -65,7 +65,7 @@ int main()
 
         // 4. Slower Spawning Logic
         spawnTimer += 1.0f;
-        if (spawnTimer >= 45.0f)
+        if (spawnTimer >= 145.0f)
         { // Spawns roughly every 0.75 seconds
             sf::Sprite meteor(meteorTexture);
             meteor.setPosition({(float)(rand() % 750), -50.f});

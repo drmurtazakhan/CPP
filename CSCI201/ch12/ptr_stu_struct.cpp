@@ -33,7 +33,7 @@ int main()
     // 2. Create a pointer and point it to the student
     studentType *studentPtr = &student;
 
-    // 3. Assign values using the arrow operator (as shown in your image)
+    // 3. Assign values using the member access operator (->) through the pointer
     strcpy(studentPtr->name, "John Smith"); // Copying text into the char array
     studentPtr->gpa = 3.9;
     studentPtr->sID = 12345;

@@ -62,5 +62,7 @@ int main()
     // Changing it through the class or seeing it through an object reflects the same number.
     cout << "Total counted via Class Name (::): " << Student::totalStudents << endl;
 
+    Student::printTotalCount(); // Prints: 2
+
     return 0;
 }

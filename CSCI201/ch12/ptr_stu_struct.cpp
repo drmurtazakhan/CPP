@@ -42,5 +42,9 @@ int main()
     // 4. Call the print function
     printStudent(studentPtr);
 
+    cout << "Address of student: " << &student << endl;
+    cout << "Address stored in pointer variable studentPtr: " << studentPtr << endl;
+    cout << "Address of pointer variable studentPtr: " << &studentPtr << endl;
+
     return 0;
 }

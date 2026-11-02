@@ -77,5 +77,10 @@ int main()
      cout << "ourClock: ";
      ourClock.printTime();
 
+     ourClock.incrementSeconds();
+     cout << "After incrementing ourClock by one second, ourClock: ";
+     ourClock.printTime();
+     cout << endl;
+
      return 0;
 } // end main

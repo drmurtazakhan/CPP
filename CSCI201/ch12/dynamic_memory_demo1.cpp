@@ -21,6 +21,7 @@ int main()
    cout << "Value of the named variable x: " << *p << endl;
    cout << "Memory address of the named variable x: " << &x << endl;
    cout << "Memory address of the named variable x via pointer: " << p << endl;
+   cout << "Memory address of the pointer variable p: " << &p << endl;
    cout << endl;
 
    // --- 3. DYNAMIC MEMORY ALLOCATION (HEAP MEMORY) ---
@@ -35,14 +36,22 @@ int main()
       into the dynamically allocated space on the HEAP. */
    *p = 100;
 
+   cout << "Before deleting the dynamic memory:" << endl;
    cout << "Value of the nameless variable: " << *p << endl;
    cout << "Memory address of the nameless variable via pointer: " << p << endl;
+   cout << "Memory address of the pointer variable p: " << &p << endl;
 
    // --- 5. CLEANING UP (HEAP MEMORY RELEASE) ---
    /* Releases the dynamically allocated HEAP memory pointed to by 'p'.
       Note: 'p' itself still lives on the STACK until main() returns,
       but the memory it pointed to on the HEAP is now deallocated. */
    delete p;
+
+   cout << endl;
+   cout << "After deleting the dynamic memory:" << endl;
+   cout << "Value of memory address that is stored in p: " << *p << endl;
+   cout << "Memory address stored in the pointer: " << p << endl;
+   cout << "Memory address of the pointer variable p: " << &p << endl;
 
    return 0;
 }

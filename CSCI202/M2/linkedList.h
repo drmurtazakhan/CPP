@@ -92,6 +92,7 @@ public:
     void initializeList(); 
     bool isEmptyList() const;
     void print() const;
+    void reversePrint() const; // Public wrapper function for reverse printing
     int length() const;
     void destroyList();
     Type front() const; 
@@ -121,6 +122,7 @@ protected:
 private: 
     void copyList(const linkedListType<Type>& otherList); 
       // Helper function used by copy constructor and assignment operator.
+    void reversePrint(nodeType<Type> *current) const; // Private recursive helper
 };
 
 // --- linkedListType Implementation ---
@@ -167,6 +169,22 @@ void linkedListType<Type>::print() const
     {
         cout << current->info << " ";
         current = current->link;
+    }
+}
+
+template <class Type>
+void linkedListType<Type>::reversePrint() const
+{
+    reversePrint(first); // Starts recursion from the head node
+}
+
+template <class Type>
+void linkedListType<Type>::reversePrint(nodeType<Type> *current) const
+{
+    if (current != nullptr)
+    {
+        reversePrint(current->link);  // print the tail[cite: 18]
+        cout << current->info << " "; // print the node[cite: 18]
     }
 }
 

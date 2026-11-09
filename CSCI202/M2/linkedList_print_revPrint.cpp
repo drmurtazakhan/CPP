@@ -20,12 +20,7 @@ int main()
 
     // Pointer-based traversal logic
     // Note: In the provided library, 'first' is protected.
-    // To use this logic in main, we use the class's iterator or print method,
-    // which implements the exact logic requested.
-    
-        
-    // This internal logic in the header follows your request:
-    // current = first; while (current != nullptr) { ... current = current->link; }
+    // To use this logic in main, we use the class's iterator or print method
     cout << "Print in order: ";
     myList.print(); 
 

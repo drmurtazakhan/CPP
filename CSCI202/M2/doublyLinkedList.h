@@ -1,4 +1,4 @@
-  
+// File: doublyLinkedList.h
 #ifndef H_doublyLinkedList
 #define H_doublyLinkedList
 
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-  //Definition of the node 
+//Definition of the node 
 template <class Type>
 struct nodeType
 {  
@@ -115,7 +115,7 @@ private:
 template <class Type>
 doublyLinkedList<Type>::doublyLinkedList()
 {
-    first= nullptr;
+    first = nullptr;
     last = nullptr;
     count = 0;
 }
@@ -129,7 +129,7 @@ bool doublyLinkedList<Type>::isEmptyList() const
 template <class Type>
 void doublyLinkedList<Type>::destroy()
 { 
-    nodeType<Type>  *temp; //pointer to delete the node
+    nodeType<Type> *temp; //pointer to delete the node
 	
     while (first != nullptr)
     {
@@ -186,8 +186,7 @@ void doublyLinkedList<Type>::reversePrint() const
 }//end reversePrint
 
 template <class Type>
-bool doublyLinkedList<Type>::
-                       search(const Type& searchItem) const
+bool doublyLinkedList<Type>::search(const Type& searchItem) const
 {
     bool found = false;
     nodeType<Type> *current; //pointer to traverse the list
@@ -201,8 +200,7 @@ bool doublyLinkedList<Type>::
             current = current->next;
 
     if (found)
-       found = (current->info == searchItem); //test for 
-                                              //equality
+       found = (current->info == searchItem); //test for equality
 
     return found;
 }//end search
@@ -232,12 +230,11 @@ void doublyLinkedList<Type>::insert(const Type& insertItem)
     bool found;
 
     newNode = new nodeType<Type>; //create the node
-    newNode->info = insertItem; //store the new item in the node
+    newNode->info = insertItem;   //store the new item in the node
     newNode->next = nullptr;
     newNode->back = nullptr;
 
-    if(first == nullptr) //if the list is empty, newNode is 
-                      //the only node
+    if (first == nullptr) //if the list is empty, newNode is the only node
     {
        first = newNode;
        last = newNode;
@@ -266,7 +263,7 @@ void doublyLinkedList<Type>::insert(const Type& insertItem)
         }
         else
         {
-              //insert newNode between trailCurrent and current
+            //insert newNode between trailCurrent and current
             if (current != nullptr)
             {
                 trailCurrent->next = newNode;
@@ -289,15 +286,14 @@ void doublyLinkedList<Type>::insert(const Type& insertItem)
 template <class Type>
 void doublyLinkedList<Type>::deleteNode(const Type& deleteItem)
 {
-    nodeType<Type> *current; //pointer to traverse the list
+    nodeType<Type> *current;      //pointer to traverse the list
     nodeType<Type> *trailCurrent; //pointer just before current
 
     bool found;
 
     if (first == nullptr)
         cout << "Cannot delete from an empty list." << endl;
-    else if (first->info == deleteItem) //node to be deleted is  
-                                       //the first node
+    else if (first->info == deleteItem) //node to be deleted is the first node
     {
         current = first;
         first = first->next;
@@ -323,10 +319,8 @@ void doublyLinkedList<Type>::deleteNode(const Type& deleteItem)
                 current = current->next;
 
         if (current == nullptr)
-            cout << "The item to be deleted is not in " 
-                 << "the list." << endl;
-        else if (current->info == deleteItem) //check for 
-                                                 //equality
+            cout << "The item to be deleted is not in the list." << endl;
+        else if (current->info == deleteItem) //check for equality
         {
             trailCurrent = current->back; 
             trailCurrent->next = current->next;
@@ -341,38 +335,76 @@ void doublyLinkedList<Type>::deleteNode(const Type& deleteItem)
             delete current;
         }
         else
-            cout << "The item to be deleted is not in list." 
-                 << endl;
+            cout << "The item to be deleted is not in list." << endl;
     }//end else
 }//end deleteNode
 
 template <class Type>
 void doublyLinkedList<Type>::copyList(const doublyLinkedList<Type>& otherList)
 {
-	cout << "The definition of this function is left as an exercise." << endl;
-	cout << "See Programming Execrise 11." << endl;
+    nodeType<Type> *newNode; //pointer to create a node
+    nodeType<Type> *current; //pointer to traverse otherList
+
+    if (first != nullptr) //if the list is nonempty, make it empty
+        destroy();
+
+    if (otherList.first == nullptr) //otherList is empty
+    {
+        first = nullptr;
+        last = nullptr;
+        count = 0;
+    }
+    else
+    {
+        current = otherList.first; //current points to the first node of otherList
+        count = otherList.count;
+
+        //Copy the first node
+        first = new nodeType<Type>;
+        first->info = current->info;
+        first->back = nullptr;
+        first->next = nullptr;
+        last = first;
+        current = current->next;
+
+        //Copy the remaining nodes
+        while (current != nullptr)
+        {
+            newNode = new nodeType<Type>;
+            newNode->info = current->info;
+            newNode->back = last;
+            newNode->next = nullptr;
+            last->next = newNode;
+            last = newNode;
+            current = current->next;
+        }
+    }
 }
 
 template <class Type>
 doublyLinkedList<Type>::doublyLinkedList(const doublyLinkedList<Type>& otherList)
 {
-	  cout << "The definition of the copy constructor is left as an exercise." << endl;
-	  cout << "See Programming Execrise 11." << endl;
+    first = nullptr;
+    last = nullptr;
+    count = 0;
+    copyList(otherList);
 }
 
 template <class Type>
 const doublyLinkedList<Type>& doublyLinkedList<Type>::operator=
-							(const doublyLinkedList<Type> &)
+							(const doublyLinkedList<Type>& otherList)
 {
-	cout << "Overloading the assignment operator is left as an exercise." << endl;
-	cout << "See Programming Execrise 11." << endl;
+    if (this != &otherList) //avoid self-copy
+    {
+        copyList(otherList);
+    }
+    return *this;
 }
 
 template <class Type>
 doublyLinkedList<Type>::~doublyLinkedList()
 {
-	cout << "Definition of the destructor is left as an exercise." << endl;
-	cout << "See Programming Execrise 11." << endl;
+    destroy();
 }
 
 #endif

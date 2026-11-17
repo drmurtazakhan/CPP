@@ -15,7 +15,7 @@ int main() {
    cout << "HashString(\"BAT\")   = " << HashString("BAT") << endl;     // 215
    cout << "HashInt(3384)        = " << HashInt(3384) << endl;          // 3384
    cout << "HashInt(-76)         = " << HashInt(-76) << endl;           // 2147483572
-   cout << "HashInt(INT_MIN)     = " << HashInt(-2147483647 - 1) << endl; // 0
+   cout << "HashInt(INT_MIN)     = " << HashInt(-2147483648) << endl; // 0
    Employee arnold { "Arnold", 101 };
    cout << "HashEmployee(Arnold) = " << HashEmployee(arnold) << endl;   // 101
    return 0;

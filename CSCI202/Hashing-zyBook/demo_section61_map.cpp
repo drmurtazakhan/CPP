@@ -15,10 +15,10 @@ int main() {
    map.Insert(4, "Green");
    map.Insert(7, "Violet");
    map.Insert(2, "Orange");
-   cout << "Contains key 7? " << boolalpha << map.Contains(7) << endl;  // true[cite: 11]
-   cout << "Contains key 9? " << map.Contains(9) << endl;               // false[cite: 11]
+   cout << "Contains key 7? " << boolalpha << map.Contains(7) << endl;  // true
+   cout << "Contains key 9? " << map.Contains(9) << endl;               // false
    map.Remove(2);
-   cout << "After Remove(2), contains 2? " << map.Contains(2) << endl;  // false[cite: 11]
-   cout << "Insert(10) works? " << map.Insert(10, "X") << endl;         // false: out of range[cite: 11]
+   cout << "After Remove(2), contains 2? " << map.Contains(2) << endl;  // false
+   cout << "Insert(10) works? " << map.Insert(10, "X") << endl;         // false: out of range
    return 0;
 }

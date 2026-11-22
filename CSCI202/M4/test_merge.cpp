@@ -1,6 +1,6 @@
 // File name: test_merge.cpp
-// How to compile: g++ test_merge.cpp -o test_merge.exe
-// How to run: ./test_merge.exe
+// Compile: g++ test_merge.cpp -o test_merge.exe
+// Run: ./test_merge.exe
 
 #include <iostream>
 #include "searchSortAlgorithms.h" // Includes the mergeSort template
@@ -19,13 +19,14 @@ int main()
     {
         cout << myList[i] << " ";
     }
-    cout << endl;
+    cout << endl << endl;
 
     // 3. Call mergeSort from searchSortAlgorithms.h
     // This calls recMergeSort and the merge function internally
     mergeSort(myList, size);
 
     // 4. Display the array after sorting
+    cout << endl;
     cout << "Array after Merge Sort:  ";
     for(int i = 0; i < size; i++)
     {

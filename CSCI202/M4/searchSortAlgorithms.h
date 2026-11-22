@@ -185,9 +185,13 @@ void recMergeSort(elemType list[], int first, int last)
     if (first < last)
     {
         int mid = (first + last) / 2;
+        cout << "Left split: " << "first = " << first << " to mid = " << mid  << endl;
         recMergeSort(list, first, mid);
+
+        cout << "Right split: " << "mid + 1 = " << mid + 1 << " to last = " << last << endl;
         recMergeSort(list, mid + 1, last);
-        cout << "Merging: " << "first=" << first << ", mid=" << mid << ", last=" << last << endl; // Debug statement
+
+        cout << "Merging: " << "[" << "first = " << first << " to mid = " << mid << "] , [mid + 1 = " << mid + 1 << " to last = " << last << "]" << endl;
         merge(list, first, mid, last);
     }
 }

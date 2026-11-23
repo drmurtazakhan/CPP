@@ -1,29 +1,36 @@
 // File name: test_binarysearch.cpp
-// How to compile: g++ test_binarysearch.cpp -o test_binarysearch.exe
-// How to run: ./test_binarysearch.exe
+// Compile: g++ test_binarysearch.cpp -o test_binarysearch.exe
+// Run: ./test_binarysearch.exe
 
 #include <iostream>
-#include "searchSortAlgorithms.h" // Includes the provided binarySearch template
+#include "searchSortAlgorithms.h"
 
 using namespace std;
 
-int main() 
+int main()
 {
-    // Binary search requires a sorted list
-    int myList[] = {5, 12, 25, 33, 47, 51, 64, 78, 82, 99};
+    // 1. Start with an unsorted array of integers
+    int myList[] = {64, 12, 82, 5, 47, 25, 99, 33, 18, 51};
     int size = 10;
     int searchItem;
 
-    cout << "Current Sorted List: ";
-    for(int i = 0; i < size; i++)
+    cout << "Initial Unsorted List: ";
+    for (int i = 0; i < size; i++)
         cout << myList[i] << " ";
     cout << endl;
 
+    // 2. Sort the array first (binarySearch requires sorted data)
+    selectionSort(myList, size);
+
+    cout << "Sorted List:           ";
+    for (int i = 0; i < size; i++)
+        cout << myList[i] << " ";
+    cout << endl;
+
+    // 3. Prompt user and run binarySearch
     cout << "Enter the number to search for: ";
     cin >> searchItem;
 
-    // The binarySearch function is called from searchSortAlgorithms.h
-    // It returns the index of the item, or -1 if not found
     int index = binarySearch(myList, size, searchItem);
 
     if (index != -1)

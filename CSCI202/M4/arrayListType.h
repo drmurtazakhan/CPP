@@ -1,6 +1,11 @@
+// File name: arrayListType.h
 #ifndef H_arrayListType
 #define H_arrayListType
-   
+
+#include <iostream>
+
+using namespace std;
+
 template <class elemType>
 class arrayListType 
 {
@@ -129,7 +134,7 @@ bool arrayListType<elemType>::isEmpty() const
 {
     cout << "See Programming Exercise 10." << endl;
     return false;
-} // //end isEmpty
+} //end isEmpty
 
 template <class elemType>
 bool arrayListType<elemType>::isFull() const
@@ -256,7 +261,6 @@ const arrayListType<elemType>& arrayListType<elemType>::operator=
             list[i] = otherList.list[i];
     }
     return *this;
-}  //end overloading operatro=
-
+}  //end overloading operator=
 
 #endif

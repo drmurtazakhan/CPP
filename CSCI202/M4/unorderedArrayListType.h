@@ -1,6 +1,7 @@
+// File name: unorderedArrayListType.h
 #ifndef H_unorderedArrayListType
 #define H_unorderedArrayListType
-  
+
 #include <iostream>
 #include "arrayListType.h"
 #include "searchSortAlgorithms.h"
@@ -28,13 +29,13 @@ template <class elemType>
 int unorderedArrayListType<elemType>::
                      binSearch(const elemType& item) const
 {
-    return binarySearch(list, length, item);
+    return binarySearch(this->list, this->length, item);
 }
 
 template <class elemType>
 void unorderedArrayListType<elemType>::sort()
 {
-    selectionSort(list, length);
+    selectionSort(this->list, this->length);
 }
 
 template <class elemType>
@@ -48,12 +49,12 @@ template <class elemType>
 void unorderedArrayListType<elemType>::insertEnd
                                  (const elemType& insertItem)
 {
-    if (length >= maxSize)  //the list is full
+    if (this->length >= this->maxSize)  //the list is full
         cout << "Cannot insert in a full list." << endl;
     else
     {
-        list[length] = insertItem; //insert the item at the end
-        length++; //increment the length
+        this->list[this->length] = insertItem; //insert the item at the end
+        this->length++; //increment the length
     }
 } //end insertEnd
 
@@ -65,8 +66,8 @@ int unorderedArrayListType<elemType>::seqSearch
     bool found = false;
     loc = 0;
 
-    while (loc < length && !found)
-        if (list[loc] == searchItem)
+    while (loc < this->length && !found)
+        if (this->list[loc] == searchItem)
             found = true;
         else
             loc++;
@@ -83,14 +84,14 @@ void unorderedArrayListType<elemType>::remove
 {
     int loc;
 
-    if (length == 0)
+    if (this->length == 0)
         cout << "Cannot delete from an empty list." << endl;
     else
     {
         loc = seqSearch(removeItem);
 
         if (loc != -1)
-            removeAt(loc);
+            this->removeAt(loc);
         else
             cout << "The tem to be deleted is not in the list."
                  << endl;
@@ -101,11 +102,11 @@ template <class elemType>
 void unorderedArrayListType<elemType>::replaceAt(int location, 
                                        const elemType& repItem)
 {
-    if (location < 0 || location >= length)
+    if (location < 0 || location >= this->length)
         cout << "The location of the item to be "
              << "replaced is out of range." << endl;
     else
-        list[location] = repItem;
+        this->list[location] = repItem;
 } //end replaceAt
 
 template <class elemType>
@@ -114,6 +115,5 @@ unorderedArrayListType<elemType>::
                        : arrayListType<elemType>(size)
 {
 }  //end constructor
-
 
 #endif
